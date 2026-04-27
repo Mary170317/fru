@@ -152,27 +152,33 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-    if (!isLoggedIn) { setShowLogin(true); return; }
-    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-    if (!cart.length) { alert("Корзина пуста"); return; }
+  if (!isLoggedIn) { setShowLogin(true); return; }
+  if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+  if (!cart.length) { alert("Корзина пуста"); return; }
 
-    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+  const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+  const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+  const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    try {
-      await fetch("https://dostavka-mary17031725.waw0.amvera.tech/order", {
-         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: userName, address: userAddress, orderText: message, total: total }),
-      });
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
+    });
+    if (response.ok) {
       alert("✅ Заказ отправлен!");
       setCart([]);
       setIsCartOpen(false);
-    } catch (e) {
-      alert("Ошибка отправки заказа. Попробуйте позже.");
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
     }
-  };
+  } catch (e) {
+    alert("Ошибка отправки. Проверьте подключение к интернету.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
