@@ -20,8 +20,8 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-const BOT_TOKEN = "ВАШ_ТОКЕН_ОТ_BOTFATHER";
-const CHAT_ID = "ВАШ_CHAT_ID";
+const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
+const CHAT_ID = "7766881831";
 
 const categories = [
   { id: "all", name: "🛍️ Всё" },
@@ -161,10 +161,10 @@ export default function Home() {
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
     try {
-      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: "POST",
+      await fetch("https://dostavka-mary17031725.waw0.amvera.tech/order", {
+         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
+        body: JSON.stringify({ name: userName, address: userAddress, orderText: message, total: total }),
       });
       alert("✅ Заказ отправлен!");
       setCart([]);
