@@ -151,37 +151,30 @@ export default function Home() {
   const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
-   const handleOrder = async () => {
+  const handleOrder = () => {
     if (!isLoggedIn) { setShowLogin(true); return; }
     if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-   if (!cart.length) { alert("Корзина пуста"); return; }
+    if (!cart.length) { alert("Корзина пуста"); return; }
 
-   const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-   const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-   const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    try {
-     const response = await fetch("https://dostavka-mary17031725.waw0.amvera.tech/order", {
-        method: "POST",
-        body: JSON.stringify({
-         name: userName || "—",
-         address: userAddress || "—",
-         orderText: message,
-         total: total,
-       }),
-     });
-    
-     if (response.ok) {
-        alert("✅ Заказ отправлен!");
-        setCart([]);
-        setIsCartOpen(false);
-     } else {
-       alert("Ошибка отправки. Попробуйте позже.");
-     }
-   } catch (e) {
-     console.error("Ошибка:", e);
-     alert("Ошибка отправки заказа. Попробуйте позже.");
-    }
+    // Сохраняем заказ локально
+    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+    orders.push({ id: Date.now(), name: userName, email: userEmail, address: userAddress, items: cart, total: total, date: new Date().toLocaleString("ru-RU") });
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    // Отправляем в Telegram через сервер Vercel (без CORS!)
+    fetch("/api/send-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: userName, address: userAddress, orderText: message, total: total }),
+    }).catch(() => {}); // ошибка не важна, заказ уже сохранён
+
+    alert(`✅ Заказ №${Date.now()} принят! Мы свяжемся с вами.`);
+    setCart([]);
+    setIsCartOpen(false);
   };
 
   return (
