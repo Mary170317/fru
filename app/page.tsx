@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
+import { createOrder } from "@/lib/createOrder";
 
 interface Product {
   id: number;
@@ -40,6 +41,20 @@ const deliveryZones = [
 ];
 
 export default function Home() {
+  const testOrder = async () => {
+  const orderId = await createOrder({
+    userId: "test",
+    items: [
+      { name: "Яблоко", price: 100, qty: 2 }
+    ],
+    totalPrice: 200,
+    deliveryPrice: 150,
+    finalPrice: 350,
+    address: "Тестовый адрес 123",
+  });
+
+  alert("Создан заказ: " + orderId);
+};
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -152,52 +167,71 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-  // ... (валидация полей остаётся без изменений)
+  if (!isLoggedIn) {
+    alert("Войдите в аккаунт");
+    return;
+  }
+
+  if (!userAddress || !addressConfirmed) {
+    alert("Подтвердите адрес доставки");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Корзина пуста");
+    return;
+  }
 
   try {
-    // Формируем текст сообщения для Telegram
+    // 🔥 1. Сохраняем заказ в Firebase
+    const orderId = await createOrder({
+      userId: firebaseUser?.uid || "guest",
+      items: cart.map(item => ({
+        name: item.name,
+        price: item.price,
+        qty: item.quantity
+      })),
+      totalPrice: total,
+      deliveryPrice: 0,
+      finalPrice: total,
+      address: userAddress,
+    });
+
+    // 🔥 2. Формируем сообщение
     const message = `
-🛍 *Новый заказ!*
+🛍 Новый заказ #${orderId}
 ------------------------
-📦 *Товары:*
+📦 Товары:
 ${cart.map(item => `- ${item.name} x${item.quantity} = ${item.price * item.quantity}₽`).join('\n')}
 ------------------------
-💰 *Итого:* ${totalPrice}₽
-👤 *Имя:* ${orderData.name}
-📞 *Телефон:* ${orderData.phone}
-📍 *Адрес:* ${orderData.address}
+💰 Итого: ${total}₽
+👤 Имя: ${userName || "Не указано"}
+📧 Email: ${userEmail}
+📍 Адрес: ${userAddress}
     `;
 
-    // Отправляем напрямую в Telegram Bot API
-    const telegramUrl = `https://api.telegram.org/bot8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk/sendMessage`;
-
-    const response = await fetch(telegramUrl, {
-      method: 'POST',
+    // 🔥 3. Отправка в Telegram
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        chat_id: '7766881831',
+        chat_id: CHAT_ID,
         text: message,
-        parse_mode: 'Markdown',
       }),
     });
 
-    const data = await response.json();
+    // ✅ УСПЕХ
+    alert("Заказ оформлен ✅");
+    setCart([]);
 
-    if (data.ok) {
-      // Успешная отправка
-      alert('Заказ успешно отправлен!');
-      setCart([]); // очищаем корзину
-      // ... любая другая логика
-    } else {
-      throw new Error(data.description || 'Ошибка отправки в Telegram');
-    }
   } catch (error) {
-    console.error('Ошибка:', error);
-    alert('Не удалось отправить заказ. Попробуйте позже.');
+    console.error("Ошибка заказа:", error);
+    alert("Ошибка заказа ❌");
   }
 };
+
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
