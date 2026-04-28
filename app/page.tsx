@@ -47,7 +47,7 @@ export default function Home() {
     items: [
       { name: "Яблоко", price: 100, qty: 2 }
     ],
-    totalPrice: 200,
+    total: 200,
     deliveryPrice: 150,
     finalPrice: 350,
     address: "Тестовый адрес 123",
