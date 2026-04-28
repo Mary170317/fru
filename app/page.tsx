@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
-import { createOrder } from "@/lib/createOrder";
 
 interface Product {
   id: number;
@@ -21,9 +20,9 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-// ЗАМЕНИТЕ НА РЕАЛЬНЫЕ ТОКЕН И ID
 const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-const CHAT_ID = "7766881831"
+const CHAT_ID = "7766881831";
+
 const categories = [
   { id: "all", name: "🛍️ Всё" },
   { id: "fruits", name: "🍎 Фрукты" },
@@ -41,20 +40,6 @@ const deliveryZones = [
 ];
 
 export default function Home() {
-  const testOrder = async () => {
-  const orderId = await createOrder({
-    userId: "test",
-    items: [
-      { name: "Яблоко", price: 100, qty: 2 }
-    ],
-    total: 200,
-    deliveryPrice: 150,
-    finalPrice: 350,
-    address: "Тестовый адрес 123",
-  });
-
-  alert("Создан заказ: " + orderId);
-};
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -167,71 +152,32 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-  if (!isLoggedIn) {
-    alert("Войдите в аккаунт");
-    return;
-  }
+    if (!isLoggedIn) { setShowLogin(true); return; }
+    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+    if (!cart.length) { alert("Корзина пуста"); return; }
 
-  if (!userAddress || !addressConfirmed) {
-    alert("Подтвердите адрес доставки");
-    return;
-  }
+    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-  if (cart.length === 0) {
-    alert("Корзина пуста");
-    return;
-  }
-
-  try {
-    // 🔥 1. Сохраняем заказ в Firebase
-    const orderId = await createOrder({
-      userId: firebaseUser?.uid || "guest",
-      items: cart.map(item => ({
-        name: item.name,
-        price: item.price,
-        qty: item.quantity
-      })),
-      totalPrice: total,
-      deliveryPrice: 0,
-      finalPrice: total,
-      address: userAddress,
-    });
-
-    // 🔥 2. Формируем сообщение
-    const message = `
-🛍 Новый заказ #${orderId}
-------------------------
-📦 Товары:
-${cart.map(item => `- ${item.name} x${item.quantity} = ${item.price * item.quantity}₽`).join('\n')}
-------------------------
-💰 Итого: ${total}₽
-👤 Имя: ${userName || "Не указано"}
-📧 Email: ${userEmail}
-📍 Адрес: ${userAddress}
-    `;
-
-    // 🔥 3. Отправка в Telegram
-    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-      }),
-    });
-
-    // ✅ УСПЕХ
-    alert("Заказ оформлен ✅");
-    setCart([]);
-
-  } catch (error) {
-    console.error("Ошибка заказа:", error);
-    alert("Ошибка заказа ❌");
-  }
-};
-
+    try {
+      await fetch("https://dostavka-mary17031725.waw0.amvera.tech/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: userName,
+          address: userAddress,
+          orderText: message,
+          total: total,
+        }),
+      });
+      alert("✅ Заказ отправлен!");
+      setCart([]);
+      setIsCartOpen(false);
+    } catch (e) {
+      alert("Ошибка отправки заказа. Попробуйте позже.");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
