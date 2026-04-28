@@ -20,9 +20,6 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-const CHAT_ID = "7766881831";
-
 const categories = [
   { id: "all", name: "🛍️ Всё" },
   { id: "fruits", name: "🍎 Фрукты" },
@@ -151,7 +148,7 @@ export default function Home() {
   const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
-  const handleOrder = () => {
+  const handleOrder = async () => {
     if (!isLoggedIn) { setShowLogin(true); return; }
     if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
     if (!cart.length) { alert("Корзина пуста"); return; }
@@ -160,21 +157,28 @@ export default function Home() {
     const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    // Сохраняем заказ локально
-    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
-    orders.push({ id: Date.now(), name: userName, email: userEmail, address: userAddress, items: cart, total: total, date: new Date().toLocaleString("ru-RU") });
-    localStorage.setItem("orders", JSON.stringify(orders));
-
-    // Отправляем в Telegram через сервер Vercel (без CORS!)
-    fetch("/api/send-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: userName, address: userAddress, orderText: message, total: total }),
-    }).catch(() => {}); // ошибка не важна, заказ уже сохранён
-
-    alert(`✅ Заказ №${Date.now()} принят! Мы свяжемся с вами.`);
-    setCart([]);
-    setIsCartOpen(false);
+    try {
+      const response = await fetch("/api/send-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: userName,
+          address: userAddress,
+          orderText: message,
+          total: total,
+        }),
+      });
+      const data = await response.json();
+      if (data.ok) {
+        alert("✅ Заказ отправлен!");
+        setCart([]);
+        setIsCartOpen(false);
+      } else {
+        alert("Ошибка отправки. Попробуйте позже.");
+      }
+    } catch (e) {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
   };
 
   return (
