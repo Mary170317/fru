@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle, Upload } from "lucide-react";
+import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
 
@@ -36,11 +36,6 @@ const deliveryZones = [
   { id: 4, name: "Другие", price: 0, color: "#9E9E9E", note: "договорная" },
 ];
 
-// Реквизиты для оплаты — ЗАМЕНИТЕ НА РЕАЛЬНЫЕ
-const cardNumber = "2200 XXXX XXXX XXXX";
-const cardName = "ИМЯ ФАМИЛИЯ";
-const cardBank = "Сбербанк";
-
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -64,8 +59,6 @@ export default function Home() {
   const [forgotPassword, setForgotPassword] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
   const [resetSent, setResetSent] = useState(false);
-  const [paymentScreenshot, setPaymentScreenshot] = useState<File | null>(null);
-  const [showPayment, setShowPayment] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthChange((user: any) => {
@@ -156,41 +149,37 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-  if (!isLoggedIn) { setShowLogin(true); return; }
-  if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-  if (!cart.length) { alert("Корзина пуста"); return; }
-  if (!paymentScreenshot) { alert("Прикрепите скриншот оплаты"); return; }
+    if (!isLoggedIn) { setShowLogin(true); return; }
+    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+    if (!cart.length) { alert("Корзина пуста"); return; }
 
-  const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-  const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-  const orderText = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-  const formData = new FormData();
-  formData.append('name', userName);
-  formData.append('address', userAddress);
-  formData.append('orderText', orderText);
-  formData.append('total', String(total));
-  formData.append('screenshot', paymentScreenshot);
-
-  try {
-    const response = await fetch("/api/send-order", {
-      method: "POST",
-      body: formData,
-    });
-    const data = await response.json();
-    if (data.ok) {
-      alert("✅ Заказ отправлен! Мы проверим оплату и свяжемся с вами.");
-      setCart([]);
-      setPaymentScreenshot(null);
-      setShowPayment(false);
-      setIsCartOpen(false);
-    } else {
+    try {
+      const response = await fetch("/api/send-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: userName,
+          address: userAddress,
+          orderText: message,
+          total: total,
+        }),
+      });
+      const data = await response.json();
+      if (data.ok) {
+        alert("✅ Заказ отправлен! Мы свяжемся с вами.");
+        setCart([]);
+        setIsCartOpen(false);
+      } else {
+        alert("Ошибка отправки. Попробуйте позже.");
+      }
+    } catch (e) {
       alert("Ошибка отправки. Попробуйте позже.");
     }
-  } catch (e) {
-    alert("Ошибка отправки. Попробуйте позже.");
-  }
-};
+  };
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
@@ -355,58 +344,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Модалка оплаты */}
-      {showPayment && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
-          <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
-            <h2 className="text-lg md:text-xl font-bold mb-4 text-center text-[#4a7c59]">💳 Оплата переводом</h2>
-            
-            <div className="bg-gray-50 rounded-xl p-4 mb-4 text-center">
-              <p className="text-sm text-gray-500 mb-1">Сумма к оплате:</p>
-              <p className="text-3xl font-bold text-[#c0392b]">{total} ₽</p>
-            </div>
-
-            <div className="bg-green-50 rounded-xl p-4 mb-4">
-              <p className="text-sm font-semibold text-[#4a7c59] mb-2">Реквизиты для перевода:</p>
-              <p className="text-sm"><strong>Банк:</strong> {cardBank}</p>
-              <p className="text-sm"><strong>Получатель:</strong> {cardName}</p>
-              <p className="text-sm"><strong>Номер карты:</strong> {cardNumber}</p>
-            </div>
-
-            <p className="text-xs text-gray-500 mb-3">
-              После оплаты, прикрепите скриншот перевода и нажмите «Подтвердить оплату».
-            </p>
-
-            <div className="mb-4">
-              <label className="flex items-center gap-2 w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500 cursor-pointer hover:border-[#4a7c59] transition-all">
-                <Upload className="w-4 h-4" />
-                {paymentScreenshot ? paymentScreenshot.name : "Прикрепить скриншот оплаты"}
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)}
-                  className="hidden"
-                />
-              </label>
-            </div>
-
-            <button
-              onClick={handleOrder}
-              disabled={!paymentScreenshot}
-              className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all disabled:opacity-50"
-            >
-              ✅ Подтвердить оплату и заказать
-            </button>
-
-            <p className="text-center text-sm text-gray-500 mt-3">
-              <button onClick={() => setShowPayment(false)} className="text-[#4a7c59] font-medium underline">
-                ← Вернуться в корзину
-              </button>
-            </p>
-          </div>
-        </div>
-      )}
-
       {/* Корзина */}
       {isCartOpen && (
         <div className="fixed inset-0 bg-black/50 z-50" onClick={() => setIsCartOpen(false)}>
@@ -419,13 +356,7 @@ export default function Home() {
             </div>
             <div className="border-t p-4 md:p-5 bg-green-50">
               <div className="flex items-center justify-between mb-4"><span className="text-base md:text-lg font-medium">Итого:</span><span className="text-xl md:text-2xl font-bold text-[#c0392b]">{total} ₽</span></div>
-              <button
-                onClick={() => setShowPayment(true)}
-                disabled={cart.length === 0 || !addressConfirmed}
-                className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50"
-              >
-                💳 Оплатить и заказать
-              </button>
+              <button onClick={handleOrder} disabled={cart.length === 0} className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50">🚀 Оформить заказ</button>
               <p className="text-xs text-gray-500 text-center mt-3 truncate">📍 {userAddress || "Адрес не указан"}</p>
             </div>
           </div>
