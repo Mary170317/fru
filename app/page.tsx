@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
+import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle, Upload } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
 
@@ -64,6 +64,7 @@ export default function Home() {
   const [forgotPassword, setForgotPassword] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
   const [resetSent, setResetSent] = useState(false);
+  const [paymentScreenshot, setPaymentScreenshot] = useState<File | null>(null);
   const [showPayment, setShowPayment] = useState(false);
 
   useEffect(() => {
@@ -160,24 +161,26 @@ export default function Home() {
     const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    try {
-      const response = await fetch('/api/send-order', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+    const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
+    const CHAT_IDS = ["7766881831", "8565038561"];
 
-      const data = await response.json();
-      if (data.success) {
-        alert("✅ Заказ отправлен!");
-        setCart([]);
-        setShowPayment(false);
-        setIsCartOpen(false);
-      } else {
-        alert("Ошибка отправки.");
-      }
+    try {
+      const results = await Promise.all(
+        CHAT_IDS.map(chatId =>
+          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: chatId, text: message }),
+          })
+        )
+      );
+      alert("✅ Заказ отправлен!");
+      setCart([]);
+      setPaymentScreenshot(null);
+      setShowPayment(false);
+      setIsCartOpen(false);
     } catch (e) {
-      alert("Ошибка отправки.");
+      alert("Ошибка отправки. Попробуйте позже.");
     }
   };
 
@@ -235,7 +238,6 @@ export default function Home() {
 
       {/* ОСНОВНОЙ КОНТЕНТ — КАТАЛОГ + ТОВАРЫ */}
       <div className="px-3 md:px-4 py-3 md:py-6 flex gap-3 md:gap-6 flex-1 max-w-6xl mx-auto w-full">
-        {/* Категории слева (десктоп) */}
         <div className="hidden md:flex flex-col gap-1.5 w-48 md:w-56 shrink-0">
           <p className="text-xs font-semibold text-gray-400 uppercase mb-1 px-2">Каталог</p>
           {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`text-left px-3 md:px-4 py-2.5 md:py-3 rounded-xl md:rounded-2xl font-medium text-xs md:text-sm transition-all ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow-lg" : "bg-white text-gray-700 hover:bg-orange-50 border"}`}>{c.name}</button>))}
@@ -245,20 +247,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Товары справа */}
         <div className="flex-1 min-w-0">
-          {/* Мобильные категории */}
           <div className="md:hidden flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1 scrollbar-hide">
             {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow" : "bg-white text-gray-600 border"}`}>{c.name}</button>))}
           </div>
-
-          {/* Поиск */}
           <div className="flex items-center gap-2 bg-white border rounded-xl px-3 py-2.5 mb-3">
             <Search className="w-4 h-4 text-gray-400 shrink-0" />
             <input type="text" placeholder="🔍 Поиск товаров..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="bg-transparent outline-none flex-1 text-sm min-w-0" />
           </div>
-
-          {/* Мобильные зоны доставки */}
           <div className="md:hidden mb-3 bg-white rounded-xl p-2 border">
             <p className="text-xs font-semibold text-[#4a7c59] mb-1 px-1">🚚 Доставка:</p>
             <div className="flex gap-1.5 flex-wrap">
@@ -266,7 +262,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Сетка товаров */}
           {filtered.length === 0 ? (
             <div className="text-center py-12 text-gray-400 bg-white rounded-2xl"><span className="text-3xl block mb-3">🍃</span><p className="text-sm">Ничего не найдено</p></div>
           ) : (
@@ -358,7 +353,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* МОДАЛКА ОПЛАТЫ */}
+      {/* МОДАЛКА ОПЛАТЫ С ВОЗМОЖНОСТЬЮ ПРИКРЕПИТЬ ЧЕК */}
       {showPayment && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -377,8 +372,19 @@ export default function Home() {
             </div>
 
             <p className="text-xs text-gray-500 mb-3">
-              После оплаты нажмите «Оформить заказ».
+              После оплаты, прикрепите скриншот чека и нажмите «Оформить заказ».
             </p>
+
+            <label className="flex items-center gap-2 w-full border-2 border-dashed border-gray-300 rounded-xl px-4 py-4 mb-4 text-sm text-gray-500 cursor-pointer hover:border-[#4a7c59] transition-all text-center justify-center">
+              <Upload className="w-4 h-4" />
+              {paymentScreenshot ? paymentScreenshot.name : "Нажмите, чтобы прикрепить чек"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)}
+                className="hidden"
+              />
+            </label>
 
             <button
               onClick={handleOrder}
