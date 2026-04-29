@@ -155,41 +155,34 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-    if (!isLoggedIn) { setShowLogin(true); return; }
-    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-    if (!cart.length) { alert("Корзина пуста"); return; }
+  if (!isLoggedIn) { setShowLogin(true); return; }
+  if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+  if (!cart.length) { alert("Корзина пуста"); return; }
 
-    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+  const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+  const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+  const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-    const CHAT_IDS = ["7766881831", "8565038561"];
+  try {
+    const response = await fetch('/api/send-order', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
 
-    try {
-      const results = await Promise.all(
-        CHAT_IDS.map(chatId =>
-          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ chat_id: chatId, text: message }),
-          })
-        )
-      );
-
-      const allOk = results.every(r => r.ok);
-      if (allOk) {
-        alert("✅ Заказ отправлен!");
-        setCart([]);
-        setShowPayment(false);
-        setIsCartOpen(false);
-      } else {
-        alert("Ошибка отправки.");
-      }
-    } catch (e) {
+    const data = await response.json();
+    if (data.success) {
+      alert("✅ Заказ отправлен!");
+      setCart([]);
+      setShowPayment(false);
+      setIsCartOpen(false);
+    } else {
       alert("Ошибка отправки.");
     }
-  };
+  } catch (e) {
+    alert("Ошибка отправки.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
