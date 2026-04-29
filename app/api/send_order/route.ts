@@ -5,18 +5,19 @@ export async function POST(request: Request) {
     const body = await request.json();
     
     const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-    const CHAT_ID = "7766881831";
+    const CHAT_IDS = ["7766881831", "СЮДА_ВТОРОЙ_CHAT_ID"]; // ← ЗАМЕНИТЕ ЗДЕСЬ
 
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${body.name || '—'}\n📍 ${body.address || '—'}\n\n${body.orderText || ''}\n\n💰 ИТОГО: ${body.total || 0} ₽`;
 
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
-    });
+    for (const chatId of CHAT_IDS) {
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message }),
+      });
+    }
 
-    const data = await response.json();
-    return NextResponse.json(data);
+    return NextResponse.json({ ok: true });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to send order' }, { status: 500 });
   }
