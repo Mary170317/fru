@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle, Upload } from "lucide-react";
+import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
 
@@ -36,7 +36,6 @@ const deliveryZones = [
   { id: 4, name: "Другие", price: 0, color: "#9E9E9E", note: "договорная" },
 ];
 
-// ЗАМЕНИТЕ НА РЕАЛЬНЫЕ РЕКВИЗИТЫ
 const cardNumber = "2200 XXXX XXXX XXXX";
 const cardName = "ИМЯ ФАМИЛИЯ";
 const cardBank = "Сбербанк";
@@ -162,37 +161,39 @@ export default function Home() {
 
     const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
     const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽\n\n📎 Чек об оплате прикреплён`;
+    const orderText = `${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+
+    const formData = new FormData();
+    formData.append('name', userName);
+    formData.append('address', userAddress);
+    formData.append('orderText', orderText);
+    formData.append('total', String(total));
+    if (paymentScreenshot) {
+      formData.append('screenshot', paymentScreenshot);
+    }
 
     try {
       const response = await fetch("/api/send-order", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: userName,
-          address: userAddress,
-          orderText: message,
-          total: total,
-        }),
+        body: formData,
       });
       const data = await response.json();
       if (data.status === "success") {
-        alert("✅ Заказ оплачен и отправлен! Мы свяжемся с вами.");
+        alert("✅ Заказ отправлен!");
         setCart([]);
         setPaymentScreenshot(null);
         setShowPayment(false);
         setIsCartOpen(false);
       } else {
-        alert("Ошибка отправки. Попробуйте позже.");
+        alert("Ошибка отправки.");
       }
     } catch (e) {
-      alert("Ошибка отправки. Попробуйте позже.");
+      alert("Ошибка отправки.");
     }
   };
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
-      {/* ШАПКА */}
       <header className="sticky top-0 z-20 bg-[#FFF8F0] border-b border-orange-100 shadow-sm">
         <div className="px-3 md:px-4 py-2.5 md:py-4 flex items-center justify-between max-w-6xl mx-auto w-full">
           <div className="flex items-center gap-2 md:gap-3">
@@ -213,12 +214,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ФОТО */}
       <div className="w-full h-28 md:h-40 overflow-hidden">
         <img src="https://avatars.mds.yandex.net/i?id=1464f4f5e31f574205e1066475e11c4c37253dac-4955124-images-thumbs&n=13" alt="Свежие продукты" className="w-full h-full object-cover" />
       </div>
 
-      {/* КОНТАКТЫ */}
       <div className="bg-white border-b">
         <div className="px-3 md:px-4 py-2 md:py-3 flex flex-wrap items-center gap-1.5 max-w-6xl mx-auto w-full">
           <span className="inline-flex items-center gap-1 text-xs md:text-sm text-gray-600 bg-orange-50 px-2 md:px-3 py-1.5 rounded-lg"><MapPin className="w-3 h-3 md:w-4 md:h-4 text-[#e87722] shrink-0" /> <span className="truncate max-w-[120px] md:max-w-none">ул. Облачная, 51</span></span>
@@ -228,7 +227,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* АДРЕС ДОСТАВКИ */}
       {isLoggedIn && (
         <div className="bg-[#FFF8E1] border-b border-orange-100">
           <div className="px-3 md:px-4 py-2 flex gap-2 items-center max-w-6xl mx-auto w-full flex-wrap">
@@ -240,9 +238,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* ОСНОВНОЙ КОНТЕНТ — КАТАЛОГ + КОРЗИНА */}
       <div className="px-3 md:px-4 py-3 md:py-6 flex gap-3 md:gap-6 flex-1 max-w-6xl mx-auto w-full">
-        {/* Каталог слева */}
         <div className="hidden md:flex flex-col gap-1.5 w-48 md:w-56 shrink-0">
           <p className="text-xs font-semibold text-gray-400 uppercase mb-1 px-2">Каталог</p>
           {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`text-left px-3 md:px-4 py-2.5 md:py-3 rounded-xl md:rounded-2xl font-medium text-xs md:text-sm transition-all ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow-lg" : "bg-white text-gray-700 hover:bg-orange-50 border"}`}>{c.name}</button>))}
@@ -252,7 +248,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Товары справа */}
         <div className="flex-1 min-w-0">
           <div className="md:hidden flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1 scrollbar-hide">
             {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow" : "bg-white text-gray-600 border"}`}>{c.name}</button>))}
@@ -293,7 +288,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ПОДВАЛ */}
       <footer className="bg-[#2c3e50] text-white mt-auto">
         <div className="px-4 py-6 md:py-10 max-w-6xl mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -305,7 +299,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* МОДАЛКА КАРТЫ */}
+      {/* Модалка карты */}
       {isMapVisible && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setIsMapVisible(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -316,7 +310,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* МОДАЛКА ХАРАКТЕРИСТИК */}
+      {/* Модалка характеристик */}
       {selectedProduct && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setSelectedProduct(null)}>
           <div className="bg-white rounded-2xl md:rounded-3xl w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -326,7 +320,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* МОДАЛКА ВХОДА */}
+      {/* Модалка входа */}
       {showLogin && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3" onClick={() => { setShowLogin(false); setForgotPassword(false); }}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -359,45 +353,30 @@ export default function Home() {
         </div>
       )}
 
-      {/* МОДАЛКА ОПЛАТЫ */}
+      {/* Модалка оплаты */}
       {showPayment && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
             <h2 className="text-lg md:text-xl font-bold mb-4 text-center text-[#4a7c59]">💳 Оплата переводом</h2>
-            
             <div className="bg-gray-50 rounded-xl p-4 mb-4 text-center">
               <p className="text-sm text-gray-500 mb-1">Сумма к оплате:</p>
               <p className="text-3xl font-bold text-[#c0392b]">{total} ₽</p>
             </div>
-
             <div className="bg-green-50 rounded-xl p-4 mb-4">
               <p className="text-sm font-semibold text-[#4a7c59] mb-2">Реквизиты для перевода:</p>
               <p className="text-sm"><strong>Банк:</strong> {cardBank}</p>
               <p className="text-sm"><strong>Получатель:</strong> {cardName}</p>
               <p className="text-sm"><strong>Номер карты:</strong> {cardNumber}</p>
             </div>
-
-            <p className="text-xs text-gray-500 mb-3">
-              После оплаты, прикрепите чек перевода и нажмите «Подтвердить оплату».
-            </p>
-
-            <button
-              onClick={handleOrder}
-              className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all"
-            >
-              ✅ Я оплатил, оформить заказ
-            </button>
-
-            <p className="text-center text-sm text-gray-500 mt-3">
-              <button onClick={() => setShowPayment(false)} className="text-[#4a7c59] font-medium underline">
-                ← Вернуться в корзину
-              </button>
-            </p>
+            <p className="text-xs text-gray-500 mb-3">После оплаты прикрепите скриншот чека и нажмите «Оформить заказ».</p>
+            <input type="file" accept="image/*" onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)} className="w-full border border-gray-200 rounded-xl px-4 py-3 mb-4 text-sm outline-none" />
+            <button onClick={handleOrder} className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all">✅ Я оплатил, оформить заказ</button>
+            <p className="text-center text-sm text-gray-500 mt-3"><button onClick={() => setShowPayment(false)} className="text-[#4a7c59] font-medium underline">← Вернуться в корзину</button></p>
           </div>
         </div>
       )}
 
-      {/* КОРЗИНА */}
+      {/* Корзина */}
       {isCartOpen && (
         <div className="fixed inset-0 bg-black/50 z-50" onClick={() => setIsCartOpen(false)}>
           <div className="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col" onClick={e => e.stopPropagation()}>
@@ -409,13 +388,7 @@ export default function Home() {
             </div>
             <div className="border-t p-4 md:p-5 bg-green-50">
               <div className="flex items-center justify-between mb-4"><span className="text-base md:text-lg font-medium">Итого:</span><span className="text-xl md:text-2xl font-bold text-[#c0392b]">{total} ₽</span></div>
-              <button
-                onClick={() => setShowPayment(true)}
-                disabled={cart.length === 0 || !addressConfirmed}
-                className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50"
-              >
-                💳 Оплатить и заказать
-              </button>
+              <button onClick={() => setShowPayment(true)} disabled={cart.length === 0 || !addressConfirmed} className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50">💳 Оплатить и заказать</button>
               <p className="text-xs text-gray-500 text-center mt-3 truncate">📍 {userAddress || "Адрес не указан"}</p>
             </div>
           </div>
