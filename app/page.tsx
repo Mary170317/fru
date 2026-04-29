@@ -149,34 +149,38 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-    if (!isLoggedIn) { setShowLogin(true); return; }
-    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-    if (!cart.length) { alert("Корзина пуста"); return; }
+  if (!isLoggedIn) { setShowLogin(true); return; }
+  if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+  if (!cart.length) { alert("Корзина пуста"); return; }
 
-    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+  const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+  const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+  const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-    try {
+   try {
       const response = await fetch("/api/send-order", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify({
           name: userName,
           address: userAddress,
-          orderText: message,
-          total: total,
-        }),
-      });
+         orderText: message,
+         total: total,
+       }),
+     });
       const data = await response.json();
-      if (data.ok) {
-        alert("✅ Заказ отправлен! Мы свяжемся с вами.");
-        setCart([]);
+    
+     // Проверяем ОБА варианта ответа
+     if (data.status === "success" || data.ok) {
+       alert("✅ Заказ отправлен!");
+       setCart([]);
         setIsCartOpen(false);
       } else {
+        console.error("Ошибка от API:", data);
         alert("Ошибка отправки. Попробуйте позже.");
-      }
+     }
     } catch (e) {
+      console.error("Ошибка:", e);
       alert("Ошибка отправки. Попробуйте позже.");
     }
   };

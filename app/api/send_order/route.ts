@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     
     const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-    const CHAT_IDS = ["7766881831", "СЮДА_ВТОРОЙ_CHAT_ID"];
+    const CHAT_IDS = ["7766881831"]; // Добавьте второй ID через запятую
 
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${body.name || '—'}\n📍 ${body.address || '—'}\n\n${body.orderText || ''}\n\n💰 ИТОГО: ${body.total || 0} ₽`;
 
@@ -17,8 +17,9 @@ export async function POST(request: Request) {
       });
     }
 
-    return NextResponse.json({ ok: true });
+    // Возвращаем ТО, ЧТО ПОНЯТНО ФРОНТЕНДУ
+    return NextResponse.json({ status: "success" }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to send order' }, { status: 500 });
+    return NextResponse.json({ status: "error" }, { status: 500 });
   }
 }
