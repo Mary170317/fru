@@ -36,10 +36,11 @@ const deliveryZones = [
   { id: 4, name: "Другие", price: 0, color: "#9E9E9E", note: "договорная" },
 ];
 
-// ЗАМЕНИТЕ НА РЕАЛЬНЫЕ РЕКВИЗИТЫ
-const cardNumber = "2200 XXXX XXXX XXXX";
-const cardName = "ИМЯ ФАМИЛИЯ";
-const cardBank = "Сбербанк";
+// ВАШИ РЕКВИЗИТЫ
+const banks = [
+  { name: "Сбербанк", phone: "+79134781012" },
+  { name: "Т-Банк / Альфа-Банк", phone: "+79235324403" },
+];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -104,18 +105,15 @@ export default function Home() {
 
   const handleLogout = async () => { try { await logoutUser(); } catch (e) {} };
 
-  const validateAddress = (address: string): boolean => {
-    const addr = address.trim();
-    if (addr.length < 10) return false;
-    if (!/\d/.test(addr)) return false;
-    return true;
-  };
-
   const confirmAddress = () => {
     setAddressError("");
-    if (!userAddress.trim()) return setAddressError("Введите адрес доставки");
-    if (!validateAddress(userAddress)) return setAddressError("Введите настоящий адрес");
-    setAddressConfirmed(true);
+    if (!userAddress.trim()) setAddressError("Введите адрес доставки");
+    else if (userAddress.trim().length < 10) setAddressError("Адрес слишком короткий");
+    else if (!/\d/.test(userAddress)) setAddressError("Добавьте номер дома");
+    else {
+      setAddressConfirmed(true);
+      setAddressError("");
+    }
   };
 
   const getProductImage = (p: Product) => p.image?.startsWith("http") ? p.image : "https://placehold.co/400x400/4a7c59/white?text=" + encodeURIComponent(p.name);
@@ -159,32 +157,30 @@ export default function Home() {
     if (!isLoggedIn) { setShowLogin(true); return; }
     if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
     if (!cart.length) { alert("Корзина пуста"); return; }
+    if (!paymentScreenshot) { alert("Прикрепите скриншот оплаты"); return; }
 
     const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
     const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽\n\n📎 Чек об оплате прикреплён`;
 
+    const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
+    const CHAT_IDS = ["7766881831", "8565038561"];
+
     try {
-      const response = await fetch("/api/send-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: userName,
-          address: userAddress,
-          orderText: message,
-          total: total,
-        }),
-      });
-      const data = await response.json();
-      if (data.status === "success") {
-        alert("✅ Заказ оплачен и отправлен! Мы свяжемся с вами.");
-        setCart([]);
-        setPaymentScreenshot(null);
-        setShowPayment(false);
-        setIsCartOpen(false);
-      } else {
-        alert("Ошибка отправки. Попробуйте позже.");
-      }
+      await Promise.all(
+        CHAT_IDS.map(chatId =>
+          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: chatId, text: message }),
+          })
+        )
+      );
+      alert("✅ Заказ оплачен и отправлен!");
+      setCart([]);
+      setPaymentScreenshot(null);
+      setShowPayment(false);
+      setIsCartOpen(false);
     } catch (e) {
       alert("Ошибка отправки. Попробуйте позже.");
     }
@@ -234,15 +230,16 @@ export default function Home() {
           <div className="px-3 md:px-4 py-2 flex gap-2 items-center max-w-6xl mx-auto w-full flex-wrap">
             <MapPin className="w-4 h-4 text-[#e87722] shrink-0" />
             <input type="text" placeholder="📍 Адрес доставки" value={userAddress} onChange={e => { setUserAddress(e.target.value); setAddressConfirmed(false); }} className="bg-white border border-orange-200 rounded-lg px-3 py-2 outline-none flex-1 text-xs md:text-sm min-w-[120px]" />
-            <button onClick={confirmAddress} className={`font-medium text-xs px-3 py-2 rounded-lg flex items-center gap-1 shrink-0 ${addressConfirmed ? "bg-green-500 text-white" : "bg-[#e87722] text-white"}`}>{addressConfirmed ? <><Check className="w-3 h-3" /> ✓</> : "Подтвердить"}</button>
+            <button onClick={confirmAddress} className={`font-medium text-xs px-3 py-2 rounded-lg flex items-center gap-1 shrink-0 ${addressConfirmed ? "bg-green-500 text-white" : "bg-[#e87722] text-white"}`}>
+              {addressConfirmed ? "✅ Подтверждён" : "Подтвердить"}
+            </button>
           </div>
           {addressError && <div className="px-3 pb-2 text-red-500 text-xs flex items-center gap-1"><AlertCircle className="w-3 h-3 shrink-0" /> {addressError}</div>}
         </div>
       )}
 
-      {/* ОСНОВНОЙ КОНТЕНТ — КАТАЛОГ + КОРЗИНА */}
+      {/* ОСНОВНОЙ КОНТЕНТ — КАТАЛОГ + ТОВАРЫ */}
       <div className="px-3 md:px-4 py-3 md:py-6 flex gap-3 md:gap-6 flex-1 max-w-6xl mx-auto w-full">
-        {/* Каталог слева */}
         <div className="hidden md:flex flex-col gap-1.5 w-48 md:w-56 shrink-0">
           <p className="text-xs font-semibold text-gray-400 uppercase mb-1 px-2">Каталог</p>
           {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`text-left px-3 md:px-4 py-2.5 md:py-3 rounded-xl md:rounded-2xl font-medium text-xs md:text-sm transition-all ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow-lg" : "bg-white text-gray-700 hover:bg-orange-50 border"}`}>{c.name}</button>))}
@@ -252,7 +249,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Товары справа */}
         <div className="flex-1 min-w-0">
           <div className="md:hidden flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1 scrollbar-hide">
             {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow" : "bg-white text-gray-600 border"}`}>{c.name}</button>))}
@@ -359,7 +355,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* МОДАЛКА ОПЛАТЫ */}
+      {/* МОДАЛКА ОПЛАТЫ С ЧЕКОМ */}
       {showPayment && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -372,20 +368,32 @@ export default function Home() {
 
             <div className="bg-green-50 rounded-xl p-4 mb-4">
               <p className="text-sm font-semibold text-[#4a7c59] mb-2">Реквизиты для перевода:</p>
-              <p className="text-sm"><strong>Банк:</strong> {cardBank}</p>
-              <p className="text-sm"><strong>Получатель:</strong> {cardName}</p>
-              <p className="text-sm"><strong>Номер карты:</strong> {cardNumber}</p>
+              {banks.map((bank, idx) => (
+                <p key={idx} className="text-sm"><strong>{bank.name}:</strong> {bank.phone}</p>
+              ))}
             </div>
 
             <p className="text-xs text-gray-500 mb-3">
-              После оплаты, прикрепите чек перевода и нажмите «Подтвердить оплату».
+              После оплаты, прикрепите скриншот чека и нажмите «Подтвердить оплату».
             </p>
+
+            <label className="flex items-center gap-2 w-full border-2 border-dashed border-gray-300 rounded-xl px-4 py-4 mb-4 text-sm text-gray-500 cursor-pointer hover:border-[#4a7c59] transition-all text-center justify-center">
+              <Upload className="w-4 h-4" />
+              {paymentScreenshot ? paymentScreenshot.name : "Нажмите, чтобы прикрепить чек"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)}
+                className="hidden"
+              />
+            </label>
 
             <button
               onClick={handleOrder}
-              className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all"
+              disabled={!paymentScreenshot}
+              className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all disabled:opacity-50"
             >
-              ✅ Я оплатил, оформить заказ
+              ✅ Подтвердить оплату и заказать
             </button>
 
             <p className="text-center text-sm text-gray-500 mt-3">
@@ -409,13 +417,7 @@ export default function Home() {
             </div>
             <div className="border-t p-4 md:p-5 bg-green-50">
               <div className="flex items-center justify-between mb-4"><span className="text-base md:text-lg font-medium">Итого:</span><span className="text-xl md:text-2xl font-bold text-[#c0392b]">{total} ₽</span></div>
-              <button
-                onClick={() => setShowPayment(true)}
-                disabled={cart.length === 0 || !addressConfirmed}
-                className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50"
-              >
-                💳 Оплатить и заказать
-              </button>
+              <button onClick={() => setShowPayment(true)} disabled={cart.length === 0 || !addressConfirmed} className="w-full bg-[#e87722] text-white py-3.5 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 disabled:opacity-50">💳 Оплатить и заказать</button>
               <p className="text-xs text-gray-500 text-center mt-3 truncate">📍 {userAddress || "Адрес не указан"}</p>
             </div>
           </div>
