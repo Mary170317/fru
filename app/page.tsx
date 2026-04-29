@@ -103,18 +103,15 @@ export default function Home() {
 
   const handleLogout = async () => { try { await logoutUser(); } catch (e) {} };
 
-  const validateAddress = (address: string): boolean => {
-    const addr = address.trim();
-    if (addr.length < 10) return false;
-    if (!/\d/.test(addr)) return false;
-    return true;
-  };
-
   const confirmAddress = () => {
     setAddressError("");
-    if (!userAddress.trim()) return setAddressError("Введите адрес доставки");
-    if (!validateAddress(userAddress)) return setAddressError("Введите настоящий адрес");
-    setAddressConfirmed(true);
+    if (!userAddress.trim()) setAddressError("Введите адрес доставки");
+    else if (userAddress.trim().length < 10) setAddressError("Адрес слишком короткий");
+    else if (!/\d/.test(userAddress)) setAddressError("Добавьте номер дома");
+    else {
+      setAddressConfirmed(true);
+      setAddressError("");
+    }
   };
 
   const getProductImage = (p: Product) => p.image?.startsWith("http") ? p.image : "https://placehold.co/400x400/4a7c59/white?text=" + encodeURIComponent(p.name);
@@ -155,34 +152,34 @@ export default function Home() {
   const items = cart.reduce((s, i) => s + i.quantity, 0);
 
   const handleOrder = async () => {
-  if (!isLoggedIn) { setShowLogin(true); return; }
-  if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
-  if (!cart.length) { alert("Корзина пуста"); return; }
+    if (!isLoggedIn) { setShowLogin(true); return; }
+    if (!userAddress.trim() || !addressConfirmed) { alert("Подтвердите адрес"); return; }
+    if (!cart.length) { alert("Корзина пуста"); return; }
 
-  const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-  const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
-  const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
+    const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
+    const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
+    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽`;
 
-  try {
-    const response = await fetch('/api/send-order', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
-    });
+    try {
+      const response = await fetch('/api/send-order', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      });
 
-    const data = await response.json();
-    if (data.success) {
-      alert("✅ Заказ отправлен!");
-      setCart([]);
-      setShowPayment(false);
-      setIsCartOpen(false);
-    } else {
+      const data = await response.json();
+      if (data.success) {
+        alert("✅ Заказ отправлен!");
+        setCart([]);
+        setShowPayment(false);
+        setIsCartOpen(false);
+      } else {
+        alert("Ошибка отправки.");
+      }
+    } catch (e) {
       alert("Ошибка отправки.");
     }
-  } catch (e) {
-    alert("Ошибка отправки.");
-  }
-};
+  };
 
   return (
     <div className="min-h-screen bg-[#FFF8F0] flex flex-col max-w-full overflow-x-hidden">
@@ -228,15 +225,17 @@ export default function Home() {
           <div className="px-3 md:px-4 py-2 flex gap-2 items-center max-w-6xl mx-auto w-full flex-wrap">
             <MapPin className="w-4 h-4 text-[#e87722] shrink-0" />
             <input type="text" placeholder="📍 Адрес доставки" value={userAddress} onChange={e => { setUserAddress(e.target.value); setAddressConfirmed(false); }} className="bg-white border border-orange-200 rounded-lg px-3 py-2 outline-none flex-1 text-xs md:text-sm min-w-[120px]" />
-            <button onClick={confirmAddress} className={`font-medium text-xs px-3 py-2 rounded-lg flex items-center gap-1 shrink-0 ${addressConfirmed ? "bg-green-500 text-white" : "bg-[#e87722] text-white"}`}>{addressConfirmed ? <><Check className="w-3 h-3" /> ✓</> : "Подтвердить"}</button>
+            <button onClick={confirmAddress} className={`font-medium text-xs px-3 py-2 rounded-lg flex items-center gap-1 shrink-0 ${addressConfirmed ? "bg-green-500 text-white" : "bg-[#e87722] text-white"}`}>
+              {addressConfirmed ? "✅ Подтверждён" : "Подтвердить"}
+            </button>
           </div>
           {addressError && <div className="px-3 pb-2 text-red-500 text-xs flex items-center gap-1"><AlertCircle className="w-3 h-3 shrink-0" /> {addressError}</div>}
         </div>
       )}
 
-      {/* ОСНОВНОЙ КОНТЕНТ: КАТАЛОГ + ТОВАРЫ */}
+      {/* ОСНОВНОЙ КОНТЕНТ — КАТАЛОГ + ТОВАРЫ */}
       <div className="px-3 md:px-4 py-3 md:py-6 flex gap-3 md:gap-6 flex-1 max-w-6xl mx-auto w-full">
-        {/* Левая колонка — категории */}
+        {/* Категории слева (десктоп) */}
         <div className="hidden md:flex flex-col gap-1.5 w-48 md:w-56 shrink-0">
           <p className="text-xs font-semibold text-gray-400 uppercase mb-1 px-2">Каталог</p>
           {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`text-left px-3 md:px-4 py-2.5 md:py-3 rounded-xl md:rounded-2xl font-medium text-xs md:text-sm transition-all ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow-lg" : "bg-white text-gray-700 hover:bg-orange-50 border"}`}>{c.name}</button>))}
@@ -246,7 +245,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Правая часть — товары */}
+        {/* Товары справа */}
         <div className="flex-1 min-w-0">
           {/* Мобильные категории */}
           <div className="md:hidden flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1 scrollbar-hide">
@@ -378,7 +377,7 @@ export default function Home() {
             </div>
 
             <p className="text-xs text-gray-500 mb-3">
-              Переведите сумму на один из номеров выше и нажмите «Оформить заказ».
+              После оплаты нажмите «Оформить заказ».
             </p>
 
             <button
