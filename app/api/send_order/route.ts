@@ -13,7 +13,6 @@ export async function POST(request: Request) {
     const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
     const CHAT_IDS = ["7766881831", "СЮДА_ВТОРОЙ_CHAT_ID"];
 
-    // 1. Сначала отправляем текст
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${name}\n📍 ${address}\n\n${orderText}\n\n💰 ИТОГО: ${total} ₽`;
 
     for (const chatId of CHAT_IDS) {
@@ -24,11 +23,14 @@ export async function POST(request: Request) {
         body: JSON.stringify({ chat_id: chatId, text: message }),
       });
 
-      // 2. Если есть скриншот — отправляем фото
+      // Отправляем фото
       if (screenshot && screenshot.size > 0) {
         const photoForm = new FormData();
         photoForm.append('chat_id', chatId);
-        photoForm.append('photo', screenshot);
+        
+        // Превращаем File в Blob
+        const blob = new Blob([await screenshot.arrayBuffer()], { type: screenshot.type });
+        photoForm.append('photo', blob, screenshot.name);
         photoForm.append('caption', '📎 Скриншот оплаты');
 
         await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
@@ -40,6 +42,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
+    console.error('API Error:', error);
     return NextResponse.json({ error: 'Failed to send order' }, { status: 500 });
   }
 }
