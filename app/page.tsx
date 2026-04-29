@@ -162,24 +162,29 @@ export default function Home() {
     const zone = selectedZone ? `\n🚚 ${deliveryZones.find(z => z.id === selectedZone)?.name}` : "";
     const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽\n\n📎 Чек об оплате прикреплён`;
 
-    try {
-      const response = await fetch('/api/send-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
-      });
+    const BOT_TOKEN = "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
+    const CHAT_IDS = ["7766881831", "8565038561"];
 
-      if (response.ok) {
-        alert("✅ Заказ отправлен!");
-        setCart([]);
-        setPaymentScreenshot(null);
-        setShowPayment(false);
-        setIsCartOpen(false);
-      } else {
-        alert("Ошибка отправки.");
-      }
-    } catch (e) {
-      alert("Ошибка отправки.");
+    let successCount = 0;
+    for (const chatId of CHAT_IDS) {
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text: message }),
+        });
+        if (res.ok) successCount++;
+      } catch (e) {}
+    }
+
+    if (successCount > 0) {
+      alert("✅ Заказ отправлен!");
+      setCart([]);
+      setPaymentScreenshot(null);
+      setShowPayment(false);
+      setIsCartOpen(false);
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
     }
   };
 
@@ -237,6 +242,7 @@ export default function Home() {
 
       {/* ОСНОВНОЙ КОНТЕНТ */}
       <div className="px-3 md:px-4 py-3 md:py-6 flex gap-3 md:gap-6 flex-1 max-w-6xl mx-auto w-full">
+        {/* Каталог слева (десктоп) */}
         <div className="hidden md:flex flex-col gap-1.5 w-48 md:w-56 shrink-0">
           <p className="text-xs font-semibold text-gray-400 uppercase mb-1 px-2">Каталог</p>
           {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`text-left px-3 md:px-4 py-2.5 md:py-3 rounded-xl md:rounded-2xl font-medium text-xs md:text-sm transition-all ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow-lg" : "bg-white text-gray-700 hover:bg-orange-50 border"}`}>{c.name}</button>))}
@@ -246,14 +252,20 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Товары справа */}
         <div className="flex-1 min-w-0">
+          {/* Мобильные категории */}
           <div className="md:hidden flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1 scrollbar-hide">
             {categories.map(c => (<button key={c.id} onClick={() => setSelectedCategory(c.id)} className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedCategory === c.id ? "bg-[#e87722] text-white shadow" : "bg-white text-gray-600 border"}`}>{c.name}</button>))}
           </div>
+
+          {/* Поиск */}
           <div className="flex items-center gap-2 bg-white border rounded-xl px-3 py-2.5 mb-3">
             <Search className="w-4 h-4 text-gray-400 shrink-0" />
             <input type="text" placeholder="🔍 Поиск товаров..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="bg-transparent outline-none flex-1 text-sm min-w-0" />
           </div>
+
+          {/* Мобильные зоны доставки */}
           <div className="md:hidden mb-3 bg-white rounded-xl p-2 border">
             <p className="text-xs font-semibold text-[#4a7c59] mb-1 px-1">🚚 Доставка:</p>
             <div className="flex gap-1.5 flex-wrap">
@@ -261,6 +273,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Сетка товаров */}
           {filtered.length === 0 ? (
             <div className="text-center py-12 text-gray-400 bg-white rounded-2xl"><span className="text-3xl block mb-3">🍃</span><p className="text-sm">Ничего не найдено</p></div>
           ) : (
@@ -298,7 +311,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* МОДАЛКИ */}
+      {/* МОДАЛКА КАРТЫ */}
       {isMapVisible && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setIsMapVisible(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -309,6 +322,7 @@ export default function Home() {
         </div>
       )}
 
+      {/* МОДАЛКА ХАРАКТЕРИСТИК */}
       {selectedProduct && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setSelectedProduct(null)}>
           <div className="bg-white rounded-2xl md:rounded-3xl w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -318,6 +332,7 @@ export default function Home() {
         </div>
       )}
 
+      {/* МОДАЛКА ВХОДА */}
       {showLogin && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3" onClick={() => { setShowLogin(false); setForgotPassword(false); }}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
@@ -350,6 +365,7 @@ export default function Home() {
         </div>
       )}
 
+      {/* МОДАЛКА ОПЛАТЫ С ЧЕКОМ */}
       {showPayment && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
