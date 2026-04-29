@@ -1,29 +1,47 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    const { message } = await request.json();
-    
+    const formData = await req.formData();
+    const message = formData.get('message') as string;
+    const photo = formData.get('photo') as File | null;
+
     const token = process.env.TELEGRAM_BOT_TOKEN || "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
     const chatIds = process.env.TELEGRAM_CHAT_IDS?.split(',') || ["7766881831", "8565038561"];
 
-    const requests = chatIds.map(chatId =>
-      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    const sendRequests = chatIds.map(async (chatId) => {
+      const method = photo ? 'sendPhoto' : 'sendMessage';
+      const url = `https://api.telegram.org/bot${token}/${method}`;
+      
+      const telegramForm = new FormData();
+      telegramForm.append('chat_id', chatId.trim());
+      
+      if (photo) {
+        telegramForm.append('photo', photo);
+        telegramForm.append('caption', message);
+      } else {
+        telegramForm.append('text', message);
+      }
+
+      const response = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId.trim(), text: message }),
-      })
-    );
+        body: telegramForm,
+      });
 
-    const responses = await Promise.all(requests);
-    const success = responses.some(res => res.ok);
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error(`Telegram API Error (${chatId}):`, errorData);
+      }
+      return response.ok;
+    });
 
-    if (!success) {
-      return NextResponse.json({ error: 'Failed to send' }, { status: 502 });
-    }
-
+    await Promise.all(sendRequests);
     return NextResponse.json({ success: true });
   } catch (error: any) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error('Order API Route Error:', error.message);
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
   }
 }
