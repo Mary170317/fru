@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle } from "lucide-react";
+import { ShoppingCart, Plus, Minus, X, Phone, MapPin, Search, User, ExternalLink, Info, Check, AlertCircle, Upload } from "lucide-react";
 import productsData from "@/data/products.json";
 import { auth, registerUser, loginUser, logoutUser, onAuthChange, resetPassword } from "@/lib/firebase";
 
@@ -353,25 +353,51 @@ export default function Home() {
         </div>
       )}
 
-      {/* Модалка оплаты */}
+      {/* Модалка оплаты с полем для чека */}
       {showPayment && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3" onClick={() => setShowPayment(false)}>
           <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
             <h2 className="text-lg md:text-xl font-bold mb-4 text-center text-[#4a7c59]">💳 Оплата переводом</h2>
+            
             <div className="bg-gray-50 rounded-xl p-4 mb-4 text-center">
               <p className="text-sm text-gray-500 mb-1">Сумма к оплате:</p>
               <p className="text-3xl font-bold text-[#c0392b]">{total} ₽</p>
             </div>
+
             <div className="bg-green-50 rounded-xl p-4 mb-4">
               <p className="text-sm font-semibold text-[#4a7c59] mb-2">Реквизиты для перевода:</p>
               <p className="text-sm"><strong>Банк:</strong> {cardBank}</p>
               <p className="text-sm"><strong>Получатель:</strong> {cardName}</p>
               <p className="text-sm"><strong>Номер карты:</strong> {cardNumber}</p>
             </div>
-            <p className="text-xs text-gray-500 mb-3">После оплаты прикрепите скриншот чека и нажмите «Оформить заказ».</p>
-            <input type="file" accept="image/*" onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)} className="w-full border border-gray-200 rounded-xl px-4 py-3 mb-4 text-sm outline-none" />
-            <button onClick={handleOrder} className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all">✅ Я оплатил, оформить заказ</button>
-            <p className="text-center text-sm text-gray-500 mt-3"><button onClick={() => setShowPayment(false)} className="text-[#4a7c59] font-medium underline">← Вернуться в корзину</button></p>
+
+            <p className="text-xs text-gray-500 mb-3">
+              После оплаты, прикрепите скриншот чека и нажмите «Подтвердить оплату».
+            </p>
+
+            <label className="flex items-center gap-2 w-full border-2 border-dashed border-gray-300 rounded-xl px-4 py-4 mb-4 text-sm text-gray-500 cursor-pointer hover:border-[#4a7c59] transition-all text-center justify-center">
+              <Upload className="w-4 h-4" />
+              {paymentScreenshot ? paymentScreenshot.name : "Нажмите, чтобы прикрепить чек"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)}
+                className="hidden"
+              />
+            </label>
+
+            <button
+              onClick={handleOrder}
+              className="w-full bg-[#e87722] text-white py-3.5 rounded-xl font-medium hover:bg-orange-600 transition-all"
+            >
+              ✅ Я оплатил, оформить заказ
+            </button>
+
+            <p className="text-center text-sm text-gray-500 mt-3">
+              <button onClick={() => setShowPayment(false)} className="text-[#4a7c59] font-medium underline">
+                ← Вернуться в корзину
+              </button>
+            </p>
           </div>
         </div>
       )}
