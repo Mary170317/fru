@@ -350,16 +350,6 @@
     "benefits": "💧 Гидратация | 🥒 Диета | ✨ Кожа"
   },
   {
-    "id": 36,
-    "name": "Томат",
-    "category": "vegetables",
-    "price": 0,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=84e1983d2c86643e7a98934b28dc8b0aa098f3dc-12738621-images-thumbs&n=13",
-    "description": "Свежие томаты.",
-    "benefits": "❤️ Сердце | 🛡️ Защита | 🍅 Вкус"
-  },
-  {
     "id": 37,
     "name": "Болгарский перец",
     "category": "vegetables",

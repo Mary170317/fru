@@ -26,8 +26,11 @@ interface CartItem extends Product {
 
 const categories = [
   { id: "all", name: "🛍️ Всё" },
-  { id: "tea", name: "🍵 Чай" },
-  { id: "grocery", name: "🥫 Бакалея" },
+  { id: "fruits", name: "🍎 Фрукты" },
+  { id: "vegetables", name: "🥕 Овощи" },
+  { id: "nuts", name: "🥜 Орехи" },
+  { id: "grocery", name: "🍵 Чай и Бакалея" },
+  { id: "drinks", name: "🥤 Напитки" },
 ];
 
 const deliveryZones = [
