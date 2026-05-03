@@ -28,8 +28,10 @@ const categories = [
   { id: "all", name: "🛍️ Всё" },
   { id: "fruits", name: "🍎 Фрукты" },
   { id: "vegetables", name: "🥕 Овощи" },
-  { id: "nuts", name: "🥜 Орехи" },
-  { id: "grocery", name: "🍵 Чай и Бакалея" },
+  { id: "nuts", name: "🥜 Орехи и сухофрукты" },
+  { id: "sweets", name: "🍬 Сладости" },
+  { id: "dried", name: "🥭 Сухофрукты и чипсы" },
+  { id: "grocery", name: "🍵 Бакалея и чай" },
   { id: "drinks", name: "🥤 Напитки" },
 ];
 
@@ -52,6 +54,7 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [firebaseUser, setFirebaseUser] = useState<any>(null);
   const [showLogin, setShowLogin] = useState(false);
   const [isMapVisible, setIsMapVisible] = useState(false);
@@ -83,6 +86,7 @@ export default function Home() {
             setUserName(data.name || "");
             setUserAddress(data.address || "");
             setAddressConfirmed(data.addressConfirmed || false);
+            setUserPhone(data.phone || "");
           } catch (e) {}
         }
       } else {
@@ -92,6 +96,7 @@ export default function Home() {
         setUserEmail("");
         setUserAddress("");
         setAddressConfirmed(false);
+        setUserPhone("");
       }
     });
     return () => unsubscribe();
@@ -101,9 +106,9 @@ export default function Home() {
 
   useEffect(() => {
     if (firebaseUser) {
-      localStorage.setItem(`user_${firebaseUser.uid}`, JSON.stringify({ name: userName, address: userAddress, addressConfirmed }));
+      localStorage.setItem(`user_${firebaseUser.uid}`, JSON.stringify({ name: userName, address: userAddress, addressConfirmed, phone: userPhone }));
     }
-  }, [userName, userAddress, addressConfirmed, firebaseUser]);
+  }, [userName, userAddress, addressConfirmed, userPhone, firebaseUser]);
 
   const handleLogout = async () => { try { await logoutUser(); } catch (e) {} };
 
@@ -133,6 +138,7 @@ export default function Home() {
       try {
         await registerUser(loginForm.email, loginForm.password);
         setUserName(loginForm.name);
+        setUserPhone(loginForm.phone);
         setShowLogin(false);
         setLoginForm({ name: "", email: "", phone: "", password: "" });
       } catch (e: any) { setLoginError(e.code === "auth/email-already-in-use" ? "Email уже зарегистрирован" : "Ошибка регистрации"); }
@@ -178,8 +184,8 @@ export default function Home() {
     if (!paymentScreenshot) { alert("Прикрепите скриншот оплаты"); return; }
 
     const list = cart.map(i => `${i.name} — ${i.quantity} ${i.unit} × ${i.price} ₽ = ${i.quantity * i.price} ₽`).join("\n");
-    const zone = selectedZone === 1 ? "🚚 Ленинский район (бесплатно)" : "🚚 Доставка — договорная";
-    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📍 ${userAddress}\n${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽\n\n📎 Чек об оплате прикреплён`;
+    const zone = selectedZone === 1 ? "🚚 Бесплатная доставка" : "🚚 Доставка — договорная";
+    const message = `🛒 НОВЫЙ ЗАКАЗ!\n👤 ${userName}\n📧 ${userEmail}\n📞 ${userPhone}\n📍 ${userAddress}\n${zone}\n\n${list}\n💰 ИТОГО: ${total} ₽\n\n📎 Чек об оплате прикреплён`;
 
     const formData = new FormData();
     formData.append('message', message);
