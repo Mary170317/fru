@@ -1140,16 +1140,6 @@
     "benefits": "🍵 Удобство | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 126,
-    "name": "Азер чай (100 пакетиков)",
-    "category": "grocery",
-    "price": 300,
-    "unit": "упак",
-    "image": "https://avatars.mds.yandex.net/i?id=791d5ebf66fe24b7d97e3a1bea356b83325d1a51-5232827-images-thumbs&n=13",
-    "description": "Азер чай в пакетиках. 100 штук, классический вкус.",
-    "benefits": "🍵 Удобство | ☀️ Энергия | 😋 Вкус"
-  },
-  {
     "id": 127,
     "name": "Твой чай (фиолетовый)",
     "category": "grocery",
