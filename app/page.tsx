@@ -161,8 +161,10 @@ export default function Home() {
   
   const addToCart = (p: Product) => setCart(prev => {
     const ex = prev.find(i => i.id === p.id);
-    setAddedItems(prev => [...prev, p.id]);
-    setTimeout(() => setAddedItems(prev => prev.filter(id => id !== p.id)), 1000);
+    setAddedItems(prev => {
+      if (prev.includes(p.id)) return prev;
+      return [...prev, p.id];
+    });
     if (ex) return prev.map(i => i.id === p.id ? { ...i, quantity: i.quantity + 1 } : i);
     return [...prev, { ...p, quantity: 1 }];
   });
@@ -301,7 +303,16 @@ export default function Home() {
                     {p.shelfLife && <p className="text-xs text-gray-400">Срок годности: {p.shelfLife}</p>}
                     <div className="flex items-center justify-between mt-2 md:mt-3">
                       <span className="text-base md:text-xl font-bold text-[#c0392b]">{p.price > 0 ? `${p.price} ₽` : "—"}</span>
-                      <button onClick={() => addToCart(p)} className={`${addedItems.includes(p.id) ? 'bg-red-500' : 'bg-[#e87722]'} text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-md hover:bg-orange-600 transition-all shrink-0`}><Plus className="w-4 h-4 md:w-5 md:h-5" /></button>
+                      <button 
+                        onClick={() => addToCart(p)} 
+                        className={`${
+                          addedItems.includes(p.id) || cart.some(i => i.id === p.id) 
+                            ? 'bg-red-500' 
+                            : 'bg-[#e87722]'
+                        } text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-md hover:opacity-90 transition-all shrink-0`}
+                      >
+                        <Plus className="w-4 h-4 md:w-5 md:h-5" />
+                      </button>
                     </div>
                     <button onClick={() => setSelectedProduct(p)} className="mt-2 md:mt-3 w-full text-xs text-[#4a7c59] font-medium flex items-center justify-center gap-1 py-1.5 md:py-2 rounded-lg md:rounded-xl bg-green-50/80 hover:bg-green-100/80 transition-all backdrop-blur-sm"><Info className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0" /> Характеристики</button>
                   </div>
