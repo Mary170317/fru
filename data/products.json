@@ -300,22 +300,12 @@
     "benefits": "🍎 Вкус | 💪 Здоровье | 🛡️ Иммунитет"
   },
   {
-    "id": 32,
-    "name": "Лимон Ташкент",
-    "category": "fruits",
-    "price": 600,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=cf57d03f76342572e92ef8ed3e2f2645b687a08a-4566903-images-thumbs&n=13",
-    "description": "Ташкентский лимон. Крупный, ароматный, с тонкой кожурой.",
-    "benefits": "🍋 Витамин C | 🛡️ Иммунитет | ☀️ Энергия"
-  },
-  {
     "id": 33,
-    "name": "Лимон жёлтый",
+    "name": "Лимон",
     "category": "fruits",
     "price": 550,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=cf57d03f76342572e92ef8ed3e2f2645b687a08a-4566903-images-thumbs&n=13",
+    "image": "https://avatars.mds.yandex.net/i?id=5b84a93fcf8eb6b92be7844e2dd0c32dbc561f3f-6946765-images-thumbs&n=13",
     "description": "Жёлтый лимон. Классический сорт, много сока и цедры.",
     "benefits": "🍋 Витамин C | 🛡️ Иммунитет | ☀️ Энергия"
   },
@@ -770,46 +760,6 @@
     "benefits": "🩸 Кровь | 🦴 Кости | ⚡ Энергия"
   },
   {
-    "id": 82,
-    "name": "Изюм (ещё один)",
-    "category": "nuts",
-    "price": 85,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=76fce12423dad9d98b1cc24895b4d9cf2a069ace-5340195-images-thumbs&n=13",
-    "description": "Изюм. Ещё один сорт сладкого сушёного винограда.",
-    "benefits": "🩸 Кровь | 🦴 Кости | ⚡ Энергия"
-  },
-  {
-    "id": 83,
-    "name": "Изюм иранский (жёлтый)",
-    "category": "nuts",
-    "price": 60,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=76fce12423dad9d98b1cc24895b4d9cf2a069ace-5340195-images-thumbs&n=13",
-    "description": "Иранский жёлтый изюм. Нежный, медовый вкус.",
-    "benefits": "🩸 Кровь | 🦴 Кости | ⚡ Энергия"
-  },
-  {
-    "id": 84,
-    "name": "Изюм черный маленький киш-миш",
-    "category": "nuts",
-    "price": 50,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=76fce12423dad9d98b1cc24895b4d9cf2a069ace-5340195-images-thumbs&n=13",
-    "description": "Мелкий чёрный изюм киш-миш. Очень сладкий, без косточек.",
-    "benefits": "🩸 Кровь | 🦴 Кости | ⚡ Энергия"
-  },
-  {
-    "id": 85,
-    "name": "Орех солёный",
-    "category": "nuts",
-    "price": 45,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=bda01087a106363cecf4252d29f5d8c20bbe66f4-13212321-images-thumbs&n=13",
-    "description": "Солёный орех. Простой и вкусный перекус.",
-    "benefits": "😋 Вкус | ⚡ Энергия | 💪 Белок"
-  },
-  {
     "id": 86,
     "name": "Арахис нежареный",
     "category": "nuts",
@@ -887,16 +837,6 @@
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=bda01087a106363cecf4252d29f5d8c20bbe66f4-13212321-images-thumbs&n=13",
     "description": "Орех в скорлупе из Ростовской области. Насыщенный вкус.",
-    "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
-  },
-  {
-    "id": 94,
-    "name": "Орех в скорлупе (ещё один)",
-    "category": "nuts",
-    "price": 35,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=bda01087a106363cecf4252d29f5d8c20bbe66f4-13212321-images-thumbs&n=13",
-    "description": "Орех в скорлупе. Бюджетный вариант.",
     "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
   },
   {
@@ -1740,26 +1680,6 @@
     "benefits": "🍓 Вкус | 🍋 Лайм | 😋 Наслаждение"
   },
   {
-    "id": 179,
-    "name": "Клубника со вкусом мандарина",
-    "category": "sweets",
-    "price": 220,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=20d0e950459e0da1cd61ac101560a9a3046584b8-6846484-images-thumbs&n=13",
-    "description": "Клубника со вкусом мандарина. Цитрусово-ягодный микс.",
-    "benefits": "🍓 Вкус | 🍊 Мандарин | 😋 Наслаждение"
-  },
-  {
-    "id": 180,
-    "name": "Клубника со вкусом банана",
-    "category": "sweets",
-    "price": 220,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=9a7198a83965557385005393e7798681-5233666-images-thumbs&n=13",
-    "description": "Клубника со вкусом банана. Тропическое удовольствие.",
-    "benefits": "🍓 Вкус | 🍌 Банан | 😋 Наслаждение"
-  },
-  {
     "id": 181,
     "name": "Маракуйя в молочном шоколаде",
     "category": "sweets",
@@ -1958,16 +1878,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=ec8d49ace4651e1a22e68b34b7d19b3b09c6e24b-4820616-images-thumbs&n=13",
     "description": "Глазированные конфеты ассорти: малина, фисташки, клюква, кешью. Микс вкусов.",
     "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
-  },
-  {
-    "id": 201,
-    "name": "Плитка Голд ассорти (15 г / 10 г)",
-    "category": "sweets",
-    "price": 100,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=a383c4b9350e734312c5d0426295a4ff72907af0-4143805-images-thumbs&n=13",
-    "description": "Ассорти мини-плиток Голд. Разные вкусы, удобный формат.",
-    "benefits": "🍫 Шоколад | ☀️ Энергия | 😋 Наслаждение"
   },
   {
     "id": 202,
