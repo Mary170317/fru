@@ -120,16 +120,6 @@
     "benefits": "🍊 Витамин C | 🔋 Бодрость | 🛡️ Защита"
   },
   {
-    "id": 13,
-    "name": "Апельсины оранжевые крупные",
-    "category": "fruits",
-    "price": 300,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=17bdee0602df4475d3a324dd0b18a2cb72081016-5452187-images-thumbs&n=13",
-    "description": "Крупные, ярко-оранжевые апельсины. Сладкие, сочные, идеальны для сока.",
-    "benefits": "🍊 Витамин C | 🔋 Бодрость | 🛡️ Защита"
-  },
-  {
     "id": 14,
     "name": "Груша",
     "category": "fruits",
@@ -380,26 +370,6 @@
     "benefits": "🍅 Вкус | ❤️ Сердце | ✨ Кожа"
   },
   {
-    "id": 39,
-    "name": "Помидоры Ташкент розовый",
-    "category": "vegetables",
-    "price": 450,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=e31d6b97506ce8ab27d3e2e58fc30953801899fe-15547930-images-thumbs&n=13",
-    "description": "Розовые помидоры. Нежный вкус, сочная мякоть.",
-    "benefits": "🍅 Салаты | 💧 Сочность | 😋 Вкус"
-  },
-  {
-    "id": 40,
-    "name": "Болгарский перец",
-    "category": "vegetables",
-    "price": 350,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=3827ca590d0b5089d9fd479c631bd4226eea6f35-4410421-images-thumbs&n=13",
-    "description": "Сладкий болгарский перец. Сочный, хрустящий, богат витамином C.",
-    "benefits": "👁️ Зрение | 💪 Сосуды | 🛡️ Иммунитет"
-  },
-  {
     "id": 41,
     "name": "Болгарские перцы красные",
     "category": "vegetables",
@@ -438,16 +408,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=79f6ffe4f749076a1e90f549413069e68a99f575-5175041-images-thumbs&n=13",
     "description": "Свежие баклажаны. Для икры, рагу и запекания.",
     "benefits": "⏳ Молодость | 🧠 Мозг | 🍆 Вкус"
-  },
-  {
-    "id": 45,
-    "name": "Капуста Айсберг",
-    "category": "vegetables",
-    "price": 350,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=814cb87e84b3ad79bc673d0745980916cd824d55-8497272-images-thumbs&n=13",
-    "description": "Хрустящая капуста Айсберг. Идеальна для свежих салатов, сочная и освежающая.",
-    "benefits": "🥗 Салаты | 💧 Свежесть | 🦷 Хруст"
   },
   {
     "id": 46,
