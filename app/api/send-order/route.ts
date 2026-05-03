@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const photo = formData.get('photo') as File | null;
 
     const token = process.env.TELEGRAM_BOT_TOKEN || "8216611154:AAFoWsw_uIO6ipvDkzHRZC6lMxzFA3cWkMk";
-    const chatIds = process.env.TELEGRAM_CHAT_IDS?.split(',') || ["7766881831", "8565038561"];
+    const chatIds = process.env.TELEGRAM_CHAT_IDS?.split(',') || ["5369731336", "8250142341"];
 
     const sendRequests = chatIds.map(async (chatId) => {
       const method = photo ? 'sendPhoto' : 'sendMessage';
