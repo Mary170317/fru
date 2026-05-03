@@ -700,16 +700,6 @@
     "benefits": "😊 Настроение | 💪 Белок | ❤️ Сердце"
   },
   {
-    "id": 76,
-    "name": "Фисташки обычные соленые маленькие",
-    "category": "nuts",
-    "price": 130,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=af23b04dac121751edd89935ff4c37ab6bb24107-12346502-images-thumbs&n=13",
-    "description": "Обычные солёные фисташки. Привычный вкус.",
-    "benefits": "😊 Настроение | 💪 Белок | ❤️ Сердце"
-  },
-  {
     "id": 77,
     "name": "Фисташки с куркумой",
     "category": "nuts",
