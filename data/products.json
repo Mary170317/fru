@@ -1730,16 +1730,6 @@
     "benefits": "🍜 Вкус | 👨‍🍳 Традиция | ✨ Качество"
   },
   {
-    "id": 183,
-    "name": "Домашний лагман 1 кг",
-    "category": "grocery",
-    "price": 300,
-    "unit": "кг",
-    "image": "https://i.ytimg.com/vi/aO3lnEF2C6g/maxresdefault.jpg",
-    "description": "Домашняя лапша для лагмана ручной работы.",
-    "benefits": "🍜 Лагман | 👨‍🍳 Готовка | 😋 Вкус"
-  },
-  {
     "id": 184,
     "name": "Рис Лазер 1 кг",
     "category": "grocery",
