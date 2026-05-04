@@ -450,16 +450,6 @@
     "benefits": "🌶️ Острота | 🔥 Метаболизм | 😋 Вкус"
   },
   {
-    "id": 52,
-    "name": "Томатная паста иранская 800 г",
-    "category": "canned",
-    "price": 200,
-    "unit": "банка",
-    "image": "https://www.ozon.ru/product/planeta-sladostey-tomatnaya-pasta-3200g-4sht-2634844692/?utm_source=yandex_serp_products&utm_medium=organic",
-    "description": "Густая иранская томатная паста. Насыщенный вкус.",
-    "benefits": "🍅 Соусы | 👨‍🍳 Готовка | 😋 Вкус"
-  },
-  {
     "id": 53,
     "name": "Томатная паста иранская 400 г",
     "category": "canned",
@@ -530,16 +520,6 @@
     "benefits": "🥒 Хруст | 🍽️ Закуска | 😋 Вкус"
   },
   {
-    "id": 60,
-    "name": "Ассорти Аиша 2 л",
-    "category": "canned",
-    "price": 250,
-    "unit": "банка",
-    "image": "https://zaedok.ru/recipes/assorti-soleniy-iz-ogurcov-pomidorov-i-chesnoka/",
-    "description": "Большая банка ассорти из огурцов и помидоров с чесноком.",
-    "benefits": "🥒 Огурцы | 🍅 Помидоры | 🍽️ Закуска"
-  },
-  {
     "id": 61,
     "name": "Рассол огуречный 3 кг",
     "category": "canned",
@@ -548,16 +528,6 @@
     "image": "https://img.7dach.ru/image/1200/15/75/13/2020/08/10/29b94b.jpg",
     "description": "Большая банка солёных огурцов в рассоле. 3 кг.",
     "benefits": "🥒 Хруст | 🍽️ Закуска | 😋 Вкус"
-  },
-  {
-    "id": 62,
-    "name": "Рассол с помидорами 3 кг",
-    "category": "canned",
-    "price": 350,
-    "unit": "банка",
-    "image": "https://7days.ru/news/kak-konservirovat-pomidory-pravilno-banki-ne-lopnut-rassol-ne-skisnet.htm",
-    "description": "Большая банка солёных помидоров в рассоле. 3 кг.",
-    "benefits": "🍅 Помидоры | 🍽️ Закуска | 😋 Вкус"
   },
   {
     "id": 63,
@@ -1665,7 +1635,7 @@
     "category": "nuts",
     "price": 35,
     "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/i?id=b7ff346e3179a32eb2826cf1d4d6a37897145d5f-7012253-images-thumbs&n=13",
+    "image": "https://avatars.mds.yandex.net/i?id=bb42d66a56ca725f0d3cc2c611d8c0802a3e7ca1-3833005-images-thumbs&n=13",
     "description": "Фруктовая смесь. Витаминный микс сухофруктов.",
     "benefits": "🍎 Витамины | ⚡ Энергия | 😋 Вкус"
   },
@@ -2250,16 +2220,6 @@
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Гранат"
   },
   {
-    "id": 232,
-    "name": "FLavis Лайм",
-    "category": "drinks",
-    "price": 150,
-    "unit": "0,5 л",
-    "image": "https://avatars.mds.yandex.net/i?id=724e386e27fa6b9954891efcb37d1fdb7c00535f-4568431-images-thumbs&n=13",
-    "description": "FLavis со вкусом лайма. Цитрусовая свежесть.",
-    "benefits": "🥤 Освежение | ☀️ Жара | 🍋 Лайм"
-  },
-  {
     "id": 233,
     "name": "R/C Кола 1,5 л",
     "category": "drinks",
@@ -2450,46 +2410,6 @@
     "benefits": "🥤 Освежение | ☀️ Жара | 🥭 Вкус"
   },
   {
-    "id": 252,
-    "name": "Боржоми",
-    "category": "drinks",
-    "price": 90,
-    "unit": "банка",
-    "image": "https://avatars.mds.yandex.net/i?id=e83da8730f0b677196f0a7e713078de5c07ced4d-4533435-images-thumbs&n=13",
-    "description": "Минеральная вода Боржоми. Грузинская классика.",
-    "benefits": "💧 Минералы | 🧹 Детокс | 💪 Здоровье"
-  },
-  {
-    "id": 253,
-    "name": "Бёрн",
-    "category": "drinks",
-    "price": 150,
-    "unit": "банка",
-    "image": "https://avatars.mds.yandex.net/i?id=27d5ae05262ba88d03815366b4163873df1c61b9-4571642-images-thumbs&n=13",
-    "description": "Энергетический напиток Бёрн. Заряд бодрости.",
-    "benefits": "⚡ Энергия | 🧠 Концентрация | 🔥 Бодрость"
-  },
-  {
-    "id": 254,
-    "name": "Кока-Кола (330 мл)",
-    "category": "drinks",
-    "price": 90,
-    "unit": "банка",
-    "image": "https://avatars.mds.yandex.net/i?id=de4db626d181bf21de7fc3b1710abc8382c77b6e-4033702-images-thumbs&n=13",
-    "description": "Кока-Кола маленькая банка. Компактный формат.",
-    "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
-  },
-  {
-    "id": 255,
-    "name": "Фанта (330 мл)",
-    "category": "drinks",
-    "price": 90,
-    "unit": "банка",
-    "image": "https://avatars.mds.yandex.net/i?id=bdb3f9692e8a66329ec5292a6ba706469b17ed4e-5555978-images-thumbs&n=13",
-    "description": "Фанта маленькая банка. Апельсиновый вкус.",
-    "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
-  },
-  {
     "id": 256,
     "name": "Миранда (330 мл)",
     "category": "drinks",
@@ -2518,26 +2438,6 @@
     "image": "https://ir.ozone.ru/s3/multimedia-1-7/8979152731.jpg",
     "description": "Пепси в банке. Освежающий вкус.",
     "benefits": "🥤 Освежение | 😋 Вкус | ☀️ Жара"
-  },
-  {
-    "id": 259,
-    "name": "Спрайт банка",
-    "category": "drinks",
-    "price": 90,
-    "unit": "банка",
-    "image": "https://www.ozon.ru/product/novinka-iz-usa-gazirovannyy-napitok-sprite-355ml-lemon-lime-1849816637/",
-    "description": "Лимонад Спрайт в банке.",
-    "benefits": "🥤 Освежение | 🍋 Лимон | 😋 Вкус"
-  },
-  {
-    "id": 260,
-    "name": "Арси яблоко 0.3 л",
-    "category": "drinks",
-    "price": 90,
-    "unit": "банка",
-    "image": "https://avatars.mds.yandex.net/i?id=3727913977842815755&n=13",
-    "description": "Освежающий напиток со вкусом яблока.",
-    "benefits": "🥤 Освежение | 🍎 Вкус | 😋 Наслаждение"
   },
   {
     "id": 261,
