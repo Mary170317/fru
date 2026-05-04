@@ -70,7 +70,7 @@ export default function AdminPanel() {
   const handleLogin = async () => {
     setLoginError("");
     if (!email || !password) {
-      setLoginError("Введите почту и пароль");
+      setLoginError("Неверные данные");
       return;
     }
     const res = await fetch("/api/admin/login", {
@@ -84,7 +84,7 @@ export default function AdminPanel() {
       setIsLoggedIn(true);
       loadProducts();
     } else {
-      setLoginError(data.message || "Неверная почта или пароль");
+      setLoginError("Неверные данные");
     }
   };
 
@@ -151,21 +151,17 @@ export default function AdminPanel() {
   if (!isLoggedIn) {
     return (
       <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(#faf8f5, #f0ebe0)", padding: "16px" }}>
-        <div style={{ background: "white", borderRadius: "24px", padding: "32px", maxWidth: "400px", width: "100%", boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}>
-          <div style={{ textAlign: "center", marginBottom: "24px" }}>
-            <span style={{ fontSize: "48px" }}>🍎</span>
-            <h1 style={{ fontSize: "22px", fontWeight: "bold", color: "#4a7c59", marginTop: "8px" }}>Облачная 51</h1>
-            <p style={{ color: "#666", fontSize: "14px", marginTop: "4px" }}>Вход в админ-панель</p>
-          </div>
-          <input type="text" placeholder="Email" value={email}
+        <div style={{ background: "white", borderRadius: "16px", padding: "24px", maxWidth: "340px", width: "100%", boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}>
+          <p style={{ textAlign: "center", color: "#999", fontSize: "13px", marginBottom: "16px" }}>Доступ ограничен</p>
+          <input type="text" placeholder="Логин" value={email}
             onChange={e => setEmail(e.target.value)}
-            style={{ width: "100%", padding: "12px", border: "1px solid #ddd", borderRadius: "12px", marginBottom: "12px", fontSize: "14px", outline: "none", boxSizing: "border-box" }} />
+            style={{ width: "100%", padding: "10px", border: "1px solid #ddd", borderRadius: "10px", marginBottom: "10px", fontSize: "14px", outline: "none", boxSizing: "border-box" }} />
           <input type="password" placeholder="Пароль" value={password}
             onChange={e => setPassword(e.target.value)}
-            style={{ width: "100%", padding: "12px", border: "1px solid #ddd", borderRadius: "12px", marginBottom: "16px", fontSize: "14px", outline: "none", boxSizing: "border-box" }} />
-          {loginError && <p style={{ color: "red", fontSize: "13px", textAlign: "center", marginBottom: "12px" }}>{loginError}</p>}
+            style={{ width: "100%", padding: "10px", border: "1px solid #ddd", borderRadius: "10px", marginBottom: "14px", fontSize: "14px", outline: "none", boxSizing: "border-box" }} />
+          {loginError && <p style={{ color: "red", fontSize: "12px", textAlign: "center", marginBottom: "10px" }}>{loginError}</p>}
           <button onClick={handleLogin}
-            style={{ width: "100%", padding: "14px", background: "#e87722", color: "white", border: "none", borderRadius: "12px", fontSize: "15px", fontWeight: "bold", cursor: "pointer" }}>
+            style={{ width: "100%", padding: "12px", background: "#888", color: "white", border: "none", borderRadius: "10px", fontSize: "14px", cursor: "pointer" }}>
             Войти
           </button>
         </div>
@@ -179,24 +175,21 @@ export default function AdminPanel() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f5f3ef", fontFamily: "Arial, sans-serif" }}>
-      <header style={{ position: "sticky", top: 0, zIndex: 20, background: "white", borderBottom: "1px solid #eee", padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <header style={{ position: "sticky", top: 0, zIndex: 20, background: "white", borderBottom: "1px solid #eee", padding: "10px 14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "24px" }}>🍎</span>
-          <h1 style={{ fontSize: "18px", fontWeight: "bold", color: "#4a7c59" }}>Админ-панель</h1>
+          <span style={{ fontSize: "22px" }}>🍎</span>
+          <h1 style={{ fontSize: "16px", fontWeight: "bold", color: "#4a7c59" }}>Управление товарами</h1>
         </div>
-        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-          <span style={{ fontSize: "12px", background: "#f0f0f0", padding: "4px 10px", borderRadius: "20px" }}>{products.length} товаров</span>
-          <button onClick={loadProducts} style={{ border: "none", background: "none", cursor: "pointer", padding: "6px" }}><RefreshCw size={16} /></button>
+        <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
           <a href="/" target="_blank" style={{ border: "none", background: "none", cursor: "pointer", padding: "6px", color: "inherit" }}><Eye size={16} /></a>
-          <button onClick={handleLogout} style={{ border: "none", background: "#ffe0e0", color: "#d00", cursor: "pointer", padding: "6px 12px", borderRadius: "10px", fontSize: "13px" }}>
-            <LogOut size={16} /> Выйти
+          <button onClick={handleLogout} style={{ border: "none", background: "#ffe0e0", color: "#d00", cursor: "pointer", padding: "6px 12px", borderRadius: "10px", fontSize: "12px" }}>
+            Выйти
           </button>
         </div>
       </header>
 
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "16px" }}>
         <div style={{ background: "white", borderRadius: "16px", padding: "12px", marginBottom: "16px", display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-          <Search size={16} style={{ color: "#999" }} />
           <input placeholder="Поиск..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
             style={{ flex: 1, minWidth: "120px", padding: "8px", border: "1px solid #ddd", borderRadius: "10px", fontSize: "13px", outline: "none" }} />
           <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}
