@@ -27,6 +27,8 @@ const categories = [
   { id: "nuts", name: "Орехи и сухофрукты" },
   { id: "sweets", name: "Сладости" },
   { id: "dried", name: "Сухофрукты и чипсы" },
+  { id: "canned", name: "Консервация" },
+  { id: "dairy", name: "Молочное" },
   { id: "grocery", name: "Бакалея и чай" },
   { id: "drinks", name: "Напитки" },
 ];

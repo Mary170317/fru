@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Яблоки",
-    "category": "fruits",
-    "price": 190,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=628ea19dcab2e3f87633e26ae0c3b8e803903887-4904401-images-thumbs&n=13",
-    "description": "Свежие яблоки. Универсальный фрукт на каждый день.",
-    "benefits": "🍎 Вкус | 💪 Здоровье | 🛡️ Иммунитет"
-  },
-  {
     "id": 2,
     "name": "Яблоки Голден",
     "category": "fruits",
@@ -30,22 +20,12 @@
     "benefits": "🍎 Вкус | 🍰 Десерты | 💛 Настроение"
   },
   {
-    "id": 4,
-    "name": "Яблоко Гала (новый урожай)",
-    "category": "fruits",
-    "price": 300,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=bd61ebdc08124e419526471fb7d590d589a0bbac-4113334-images-thumbs&n=13",
-    "description": "Хрустящее яблоко Гала свежего урожая. Идеальный баланс сладости и кислинки.",
-    "benefits": "🍏 Диета | 🔥 Метаболизм | 🦷 Зубы"
-  },
-  {
     "id": 5,
     "name": "Яблоки Жанатан",
     "category": "fruits",
     "price": 270,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=8047ff0fb18f4d5f8a5f71ea52d0e556adcc0999-10698872-images-thumbs&n=13",
+    "image": "https://avatars.mds.yandex.net/i?id=77697dddcaa5c448d5e5a16c42f0d10b69d83abc-5307457-images-thumbs&n=13",
     "description": "Сорт Жанатан – плотные, сладкие, с лёгкой кислинкой. Отлично хранятся.",
     "benefits": "❤️ Сердце | 🩸 Кровь | 🛡️ Иммунитет"
   },
@@ -58,16 +38,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=03ad06d2e6ca2c9be44b90ac2d495ce75bc94411-4580062-images-thumbs&n=13",
     "description": "Крупные зелёные яблоки. Сочные, хрустящие, с характерной кислинкой.",
     "benefits": "🍏 Клетчатка | 🦷 Зубы | 💚 Здоровье"
-  },
-  {
-    "id": 7,
-    "name": "Яблоки красные Жанатан (маленькие)",
-    "category": "fruits",
-    "price": 200,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=8047ff0fb18f4d5f8a5f71ea52d0e556adcc0999-10698872-images-thumbs&n=13",
-    "description": "Маленькие красные яблоки сорта Жанатан. Сладкие, сочные, удобно брать с собой.",
-    "benefits": "❤️ Сердце | 🩸 Кровь | 🛡️ Иммунитет"
   },
   {
     "id": 8,
@@ -115,7 +85,7 @@
     "category": "fruits",
     "price": 300,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=e2499ac0f28ba1bd4bf9c4179bbc36a10c3a790b-5236925-images-thumbs&n=13",
+    "image": "https://avatars.mds.yandex.net/i?id=764061f9bd6f8947adba62b1e294d5c0e4025ab7-3979623-images-thumbs&n=13",
     "description": "Сладкие мандарины сорта Свит. Новогодний аромат круглый год.",
     "benefits": "🍊 Витамин C | 😋 Вкус | 🛡️ Защита"
   },
@@ -144,7 +114,7 @@
     "name": "Помело красное (в упаковке) + жёлтое крупное",
     "category": "fruits",
     "price": 200,
-    "unit": "упак",
+    "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=58ebf1ec313abfd86a181029269bafd09be46acf-12417143-images-thumbs&n=13",
     "description": "Сладкое красное помело и крупное жёлтое. Богато витамином C, сочное и освежающее.",
     "benefits": "💪 Сосуды | 🩺 Давление | ☀️ Витамин C"
@@ -191,7 +161,7 @@
   },
   {
     "id": 20,
-    "name": "Виноград японский зелёный",
+    "name": "Виноград Томсон",
     "category": "fruits",
     "price": 400,
     "unit": "кг",
@@ -208,16 +178,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=363268a857e3170e5bda7c63f82d258f7d187faa-12439486-images-thumbs&n=13",
     "description": "Сладкий виноград кишмиш без косточек.",
     "benefits": "🍇 Перекус | 😋 Вкус | ✨ Без косточек"
-  },
-  {
-    "id": 22,
-    "name": "Гранат Сири",
-    "category": "fruits",
-    "price": 450,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=a990ec3a591257614b34cb0bd3b210f8-5236341-images-thumbs&n=13",
-    "description": "Элитный сорт граната. Крупный, сладкий, с тонкой косточкой.",
-    "benefits": "🩸 Гемоглобин | ⏳ Молодость | 💪 Сосуды"
   },
   {
     "id": 23,
@@ -430,16 +390,6 @@
     "benefits": "⏳ Молодость | 🧠 Мозг | 🍆 Вкус"
   },
   {
-    "id": 44,
-    "name": "Кукуруза китайская",
-    "category": "vegetables",
-    "price": 170,
-    "unit": "шт",
-    "image": "https://avatars.mds.yandex.net/i?id=d5a03a3d1ceb369b4afd2a0eb4cf3b6bbcc6bf6a-5237668-images-thumbs&n=13",
-    "description": "Сладкая китайская кукуруза. Сочные зёрна, отлично варить или на гриль.",
-    "benefits": "🌽 Клетчатка | ⚡ Энергия | 😋 Вкус"
-  },
-  {
     "id": 45,
     "name": "Пекинская капуста",
     "category": "vegetables",
@@ -488,16 +438,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=8038fb26a1b29ceced0e516e9f847824a2fbb0eb-4274912-images-thumbs&n=13",
     "description": "Виноградные листья в банке. Сухой засол, традиционный вкус.",
     "benefits": "🍃 Традиция | 😋 Вкус | 👨‍🍳 Готовка"
-  },
-  {
-    "id": 50,
-    "name": "Перцы маринованные (фаршированные, аджика)",
-    "category": "vegetables",
-    "price": 180,
-    "unit": "упак",
-    "image": "https://avatars.mds.yandex.net/i?id=cce312dcf09ced0bcfe45223af36e2054eb8b4f1-10108140-images-thumbs&n=13",
-    "description": "Маринованные перцы с аджикой. Остро-сладкая закуска.",
-    "benefits": "🌶️ Острота | 😋 Вкус | 🍽️ Закуска"
   },
   {
     "id": 51,
