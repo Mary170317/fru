@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 2,
     "name": "Яблоки Голден",
@@ -111,12 +111,12 @@
   },
   {
     "id": 15,
-    "name": "Помело красное (в упаковке) + жёлтое крупное",
+    "name": "Помело красное + жёлтое крупное",
     "category": "fruits",
     "price": 200,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=58ebf1ec313abfd86a181029269bafd09be46acf-12417143-images-thumbs&n=13",
-    "description": "Сладкое красное помело и крупное жёлтое. Богато витамином C, сочное и освежающее.",
+    "description": "Сладкое красное помело и крупное жёлтое. Богато витамином C.",
     "benefits": "💪 Сосуды | 🩺 Давление | ☀️ Витамин C"
   },
   {
@@ -163,10 +163,10 @@
     "id": 20,
     "name": "Виноград Томсон",
     "category": "fruits",
-    "price": 400,
+    "price": 500,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=9867b9291448c4825b949b83c54f863befaaa829-10350400-images-thumbs&n=13",
-    "description": "Крупный японский виноград. Сладкий, с тонкой кожицей.",
+    "description": "Крупный виноград Томсон. Сладкий, с тонкой кожицей.",
     "benefits": "🍇 Антиоксиданты | ⏳ Молодость | 💚 Сердце"
   },
   {
@@ -186,7 +186,7 @@
     "price": 490,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=c4c0826ebf32a86aa25576c81a0e9c45c879d0c3-4860138-images-thumbs&n=13",
-    "description": "Свежий урожай граната из Сирии. Особо сладкий, с насыщенным рубиновым цветом.",
+    "description": "Свежий урожай граната из Сирии. Особо сладкий.",
     "benefits": "🩸 Гемоглобин | ⏳ Молодость | 💪 Сосуды"
   },
   {
@@ -345,18 +345,18 @@
     "category": "vegetables",
     "price": 500,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=82eb14a9743b5f68f105e8ff176e201145c71afc-5289055-images-thumbs&n=13",
-    "description": "Крупные, мясистые, сахарные помидоры из Ташкента. Настоящий вкус лета.",
+    "image": "https://avatars.mds.yandex.net/i?id=12ed4e28e0e3cb18c9576e7a7ac37e8ee223b91a-4599768-images-thumbs&n=13",
+    "description": "Крупные, мясистые, сахарные помидоры из Ташкента.",
     "benefits": "🍅 Вкус | ❤️ Сердце | ✨ Кожа"
   },
   {
     "id": 40,
-    "name": "Помидоры Ташкент розовые",
+    "name": "Томаты",
     "category": "vegetables",
-    "price": 450,
+    "price": 350,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/get-eda/3595156/7885b9db8e813723edba1523bf4e7dfb/1200x1200nocrop",
-    "description": "Сочные розовые помидоры из Ташкента. Сладкие и мясистые.",
+    "description": "Спелые сочные томаты.",
     "benefits": "🍅 Вкус | ❤️ Сердце | ✨ Кожа"
   },
   {
@@ -366,7 +366,7 @@
     "price": 349,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=3827ca590d0b5089d9fd479c631bd4226eea6f35-4410421-images-thumbs&n=13",
-    "description": "Сладкие красные болгарские перцы. Идеальны для свежих салатов и запекания.",
+    "description": "Сладкие красные болгарские перцы.",
     "benefits": "👁️ Зрение | 💪 Сосуды | 🛡️ Иммунитет"
   },
   {
@@ -390,6 +390,16 @@
     "benefits": "⏳ Молодость | 🧠 Мозг | 🍆 Вкус"
   },
   {
+    "id": 44,
+    "name": "Огурцы гладкие",
+    "category": "vegetables",
+    "price": 200,
+    "unit": "кг",
+    "image": "https://avatars.mds.yandex.net/i?id=b33fcf487ca81139f33d7811ce94aec70736c387-7265716-images-thumbs&n=13",
+    "description": "Гладкие огурцы. Сочные, хрустящие.",
+    "benefits": "🥒 Салаты | 💧 Свежесть | 😋 Вкус"
+  },
+  {
     "id": 45,
     "name": "Пекинская капуста",
     "category": "vegetables",
@@ -401,12 +411,12 @@
   },
   {
     "id": 46,
-    "name": "Капуста белокочанная (свежий урожай)",
+    "name": "Капуста белокочанная",
     "category": "vegetables",
     "price": 120,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=eaf20c12c1789042075ddc95cefe09ea152f935d-4120702-images-thumbs&n=13",
-    "description": "Молодая белокочанная капуста свежего урожая. Сочная и хрустящая.",
+    "description": "Молодая белокочанная капуста. Сочная и хрустящая.",
     "benefits": "🥬 Витамин C | 🧹 Пищеварение | 💪 Здоровье"
   },
   {
@@ -426,23 +436,33 @@
     "price": 230,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=00916e233e12cdfef50a06c6a33f8d23e1198518d537a10b-5588793-images-thumbs&n=13",
-    "description": "Виноградные листья для долмы. В рассоле, готовы к использованию.",
+    "description": "Виноградные листья для долмы. В рассоле.",
     "benefits": "🍃 Традиция | 😋 Вкус | 👨‍🍳 Готовка"
   },
   {
     "id": 49,
-    "name": "Виноградные листья в банке без воды",
+    "name": "Виноградные листья в банке",
     "category": "vegetables",
     "price": 190,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=8038fb26a1b29ceced0e516e9f847824a2fbb0eb-4274912-images-thumbs&n=13",
-    "description": "Виноградные листья в банке. Сухой засол, традиционный вкус.",
+    "description": "Виноградные листья в банке. Сухой засол.",
     "benefits": "🍃 Традиция | 😋 Вкус | 👨‍🍳 Готовка"
+  },
+  {
+    "id": 50,
+    "name": "Морковь желтая",
+    "category": "vegetables",
+    "price": 100,
+    "unit": "кг",
+    "image": "https://avatars.mds.yandex.net/i?id=4eedf83180cb22564a8246dec5674df412d6bd0d-4357367-images-thumbs&n=13",
+    "description": "Жёлтая морковь. Слаще оранжевой.",
+    "benefits": "👁️ Зрение | ✨ Кожа | 🥕 Вкус"
   },
   {
     "id": 51,
     "name": "Аджика «Кобра»",
-    "category": "vegetables",
+    "category": "canned",
     "price": 180,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=e7a437cb5390332983d40c17e6c77577504946c6-5231964-images-thumbs&n=13",
@@ -456,7 +476,7 @@
     "price": 340,
     "unit": "банка",
     "image": "https://basket-26.wbbasket.ru/vol4804/part480415/480415234/images/big/1.webp",
-    "description": "Иранская томатная паста в удобной упаковке 400 г.",
+    "description": "Иранская томатная паста. 400 г.",
     "benefits": "🍅 Соусы | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
@@ -466,7 +486,7 @@
     "price": 250,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=84b3656d20591957b985105f69d062b923fac4d6-2480271-images-thumbs&n=13",
-    "description": "Натуральная таджикская томатная паста без добавок.",
+    "description": "Натуральная таджикская томатная паста.",
     "benefits": "🍅 Натурально | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
@@ -476,7 +496,7 @@
     "price": 160,
     "unit": "банка",
     "image": "https://img.povar.ru/main/1a/39/c3/2e/adjika_na_zimu_bez_sterilizacii-322242.jpg",
-    "description": "Острая домашняя аджика. Традиционный кавказский рецепт.",
+    "description": "Острая домашняя аджика.",
     "benefits": "🌶️ Острота | 🔥 Метаболизм | 😋 Вкус"
   },
   {
@@ -486,7 +506,7 @@
     "price": 200,
     "unit": "банка",
     "image": "https://s.alicdn.com/@sc01/kf/H43d40773a241462190cc24bea12b5bb3e.jpg",
-    "description": "Маринованные перцы халапеньо из Ирана. Острая закуска.",
+    "description": "Маринованные перцы халапеньо из Ирана.",
     "benefits": "🌶️ Острота | 🍽️ Закуска | 😋 Вкус"
   },
   {
@@ -496,7 +516,7 @@
     "price": 190,
     "unit": "банка",
     "image": "https://img.povar.ru/mobile/51/90/de/bd/marinovannii_ostrii_perec-596034.JPG",
-    "description": "Целые маринованные острые перцы. Идеально к мясу.",
+    "description": "Целые маринованные острые перцы.",
     "benefits": "🌶️ Острота | 🍽️ Закуска | 😋 Вкус"
   },
   {
@@ -511,7 +531,7 @@
   },
   {
     "id": 59,
-    "name": "Огурцы консервированные узбекские 1 л",
+    "name": "Огурцы консервированные узбекские",
     "category": "canned",
     "price": 300,
     "unit": "банка",
@@ -526,7 +546,7 @@
     "price": 350,
     "unit": "банка",
     "image": "https://img.7dach.ru/image/1200/15/75/13/2020/08/10/29b94b.jpg",
-    "description": "Большая банка солёных огурцов в рассоле. 3 кг.",
+    "description": "Большая банка солёных огурцов. 3 кг.",
     "benefits": "🥒 Хруст | 🍽️ Закуска | 😋 Вкус"
   },
   {
@@ -556,7 +576,7 @@
     "price": 120,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=f3839c24aceaf5f111b294a6b4d3b8684926e7ae-4228230-images-thumbs&n=13",
-    "description": "Натуральный кешью. Отличный перекус, богат магнием.",
+    "description": "Натуральный кешью. Отличный перекус.",
     "benefits": "💪 Мышцы | 🧠 Нервы | 🦴 Кости"
   },
   {
@@ -566,7 +586,7 @@
     "price": 250,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=782b3e981c97b0d5850ddd9a3cc7bbab753c8c7f970d4629-7063851-images-thumbs&n=13",
-    "description": "Бразильский орех. Источник селена, мощный антиоксидант.",
+    "description": "Бразильский орех. Источник селена.",
     "benefits": "🧠 Мозг | 🛡️ Иммунитет | 💪 Здоровье"
   },
   {
@@ -576,7 +596,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=b231d2b7a43667c1d779465f25f2f2a542c8e02a-12267805-images-thumbs&n=13",
-    "description": "Лесной фундук. Сладковатый, ароматный, идеален для выпечки.",
+    "description": "Лесной фундук. Сладковатый, ароматный.",
     "benefits": "🧠 Память | ❤️ Сердце | ✨ Кожа"
   },
   {
@@ -586,7 +606,7 @@
     "price": 85,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=b8bc7bf3f46cede9858636e0f057acd5cd68a7a4-8526247-images-thumbs&n=13",
-    "description": "Грецкий орех из Киргизии. Отборный, сладковатый.",
+    "description": "Грецкий орех из Киргизии. Отборный.",
     "benefits": "🧠 Мозг | ❤️ Сердце | 🦴 Кости"
   },
   {
@@ -596,7 +616,7 @@
     "price": 80,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=d890e4c2467f6bb3139d37859abb35dfbdecc573-2896823-images-thumbs&n=13",
-    "description": "Грецкий орех ассорти. Микс разных сортов.",
+    "description": "Грецкий орех ассорти. Микс сортов.",
     "benefits": "🧠 Мозг | ❤️ Сердце | 🦴 Кости"
   },
   {
@@ -606,7 +626,7 @@
     "price": 75,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=b8bc7bf3f46cede9858636e0f057acd5cd68a7a4-8526247-images-thumbs&n=13",
-    "description": "Иранский грецкий орех. Тонкая скорлупа, насыщенный вкус.",
+    "description": "Иранский грецкий орех.",
     "benefits": "🧠 Мозг | ❤️ Сердце | 🦴 Кости"
   },
   {
@@ -616,7 +636,7 @@
     "price": 45,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=bda01087a106363cecf4252d29f5d8c20bbe66f4-13212321-images-thumbs&n=13",
-    "description": "Орех в скорлупе из Ростовской области. Насыщенный вкус.",
+    "description": "Орех в скорлупе из Ростовской области.",
     "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
   },
   {
@@ -626,7 +646,7 @@
     "price": 90,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=8289ed3d3880509ba70529cbf03d8d0abe64b4d4-4011747-images-thumbs&n=13",
-    "description": "Орех макадамия. Нежный, маслянистый, деликатесный.",
+    "description": "Орех макадамия. Нежный, деликатесный.",
     "benefits": "❤️ Сердце | 🧠 Мозг | ✨ Кожа"
   },
   {
@@ -636,7 +656,7 @@
     "price": 100,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=ec53e624a27aa732a7c02c98a90684ce266816aa-12666658-images-thumbs&n=13",
-    "description": "Миндаль в скорлупе. Натуральный, богат кальцием.",
+    "description": "Миндаль в скорлупе. Натуральный.",
     "benefits": "🦴 Кости | 🦷 Зубы | 💪 Белок"
   },
   {
@@ -646,7 +666,7 @@
     "price": 110,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=1aa553876fd5d7f80eec0e1a4196e0f21c088f08-6968705-images-thumbs&n=13",
-    "description": "Нежареный миндаль. Мягкий вкус, максимум пользы.",
+    "description": "Нежареный миндаль. Мягкий вкус.",
     "benefits": "🦴 Кости | 🦷 Зубы | 💪 Белок"
   },
   {
@@ -656,7 +676,7 @@
     "price": 120,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=f5f43662029c26d615235443f01e95c666f6557f-16302568-images-thumbs&n=13",
-    "description": "Жареный миндаль. Хрустящий, ароматный.",
+    "description": "Жареный миндаль. Хрустящий.",
     "benefits": "🦴 Кости | 🦷 Зубы | 💪 Белок"
   },
   {
@@ -666,17 +686,17 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=af23b04dac121751edd89935ff4c37ab6bb24107-12346502-images-thumbs&n=13",
-    "description": "Солёные фисташки. Классическая закуска к напиткам.",
+    "description": "Солёные фисташки. Классическая закуска.",
     "benefits": "😊 Настроение | 💪 Белок | ❤️ Сердце"
   },
   {
     "id": 77,
     "name": "Фисташки Турция",
     "category": "nuts",
-    "price": 2300,
-    "unit": "кг",
+    "price": 230,
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=af23b04dac121751edd89935ff4c37ab6bb24107-12346502-images-thumbs&n=13",
-    "description": "Турецкие фисташки. Элитный сорт, крупные, очень вкусные.",
+    "description": "Турецкие фисташки. Крупные, очень вкусные.",
     "benefits": "😊 Настроение | 💪 Белок | ❤️ Сердце"
   },
   {
@@ -686,7 +706,7 @@
     "price": 140,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=3250128c345a55e73360bd35d755b29dcdaa577c-12345551-images-thumbs&n=13",
-    "description": "Фисташки с куркумой. Пряный вкус, двойная польза.",
+    "description": "Фисташки с куркумой. Пряный вкус.",
     "benefits": "😊 Настроение | 🛡️ Иммунитет | ❤️ Сердце"
   },
   {
@@ -696,7 +716,7 @@
     "price": 30,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=2f0170b45da6f994fb774b79f220cd32930c290a-4012073-images-thumbs&n=13",
-    "description": "Нежареный арахис. Для ценителей натурального вкуса.",
+    "description": "Нежареный арахис. Натуральный вкус.",
     "benefits": "💪 Белок | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -706,7 +726,7 @@
     "price": 45,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=94b5a6535b08bf1e6bf68f0012ecc0083fb7b9e8-3910357-images-thumbs&n=13",
-    "description": "Жареный арахис. Хрустящий, классический.",
+    "description": "Жареный арахис. Хрустящий.",
     "benefits": "💪 Белок | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -746,7 +766,7 @@
     "price": 20,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=84d736f2094b76933bbc1e1690b6343a0124ca90-4825391-images-thumbs&n=13",
-    "description": "Чёрные семечки. Классический русский перекус.",
+    "description": "Чёрные семечки. Классический перекус.",
     "benefits": "😋 Вкус | ⚡ Энергия | 🧠 Мозг"
   },
   {
@@ -766,7 +786,7 @@
     "price": 55,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=55266dc77282172c70a1132d7d93b00b79608997-5239765-images-thumbs&n=13",
-    "description": "Тыквенные семечки. Богаты цинком, полезны для иммунитета.",
+    "description": "Тыквенные семечки. Богаты цинком.",
     "benefits": "💪 Цинк | 🧠 Мозг | ❤️ Сердце"
   },
   {
@@ -776,7 +796,7 @@
     "price": 55,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=6ba331e7b832ee28e64a57e298f838fe602e6918-10501287-images-thumbs&n=13",
-    "description": "Тыквенные семечки в скорлупе. Натуральные, неочищенные.",
+    "description": "Тыквенные семечки в скорлупе.",
     "benefits": "💪 Цинк | 🧠 Мозг | ❤️ Сердце"
   },
   {
@@ -786,7 +806,7 @@
     "price": 120,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=76fce12423dad9d98b1cc24895b4d9cf2a069ace-5340195-images-thumbs&n=13",
-    "description": "Сладкий изюм. Натуральный источник энергии и железа.",
+    "description": "Сладкий изюм. Натуральный источник энергии.",
     "benefits": "🩸 Кровь | 🦴 Кости | ⚡ Энергия"
   },
   {
@@ -796,7 +816,7 @@
     "price": 50,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=02a11ccab1c82e46bcb86022ae203d8ca873c548-4824090-images-thumbs&n=13",
-    "description": "Сладкая курага. Натуральный источник калия и клетчатки.",
+    "description": "Сладкая курага. Натуральный источник калия.",
     "benefits": "🍑 Калий | ⚡ Энергия | 💪 Здоровье"
   },
   {
@@ -811,7 +831,7 @@
   },
   {
     "id": 91,
-    "name": "Финики на развес 100 г",
+    "name": "Финики на развес",
     "category": "dried",
     "price": 40,
     "unit": "100 г",
@@ -821,23 +841,13 @@
   },
   {
     "id": 92,
-    "name": "Сушеный инжир 100 г",
+    "name": "Сушеный инжир",
     "category": "dried",
-    "price": 650,
+    "price": 65,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=ba4658a6c38e989c2b73438d8abd934364df83fd-5236761-images-thumbs&n=13",
     "description": "Сушёный инжир. Сладкий и полезный.",
     "benefits": "🫐 Клетчатка | ⚡ Энергия | 💪 Здоровье"
-  },
-  {
-    "id": 93,
-    "name": "Кокос чипс",
-    "category": "dried",
-    "price": 400,
-    "unit": "400 г",
-    "image": "https://avatars.mds.yandex.net/i?id=1806f8f6ad2905f52a1be2d48621133a8bec9254-5233389-images-thumbs&n=13",
-    "description": "Кокосовые чипсы. Хрустящие, натуральные. 400 г.",
-    "benefits": "🥥 Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
     "id": 94,
@@ -846,7 +856,7 @@
     "price": 400,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=be667c905dd23c1a455813a7f9d059004f872f4c-5234042-images-thumbs&n=13",
-    "description": "Сушёное манго кубиками. Сладкое, ароматное. 500 г.",
+    "description": "Сушёное манго кубиками. 500 г.",
     "benefits": "🥭 Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
@@ -866,7 +876,7 @@
     "price": 350,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=7c860d07826c03890d0897888629cc1865eadb2a-12597979-images-thumbs&n=13",
-    "description": "Сушёный киви. Кисло-сладкие колечки. 500 г.",
+    "description": "Сушёный киви. Кисло-сладкие. 500 г.",
     "benefits": "🥝 Вкус | 🛡️ Иммунитет | 😋 Наслаждение"
   },
   {
@@ -881,7 +891,7 @@
   },
   {
     "id": 98,
-    "name": "Натуральная сушёная клубника",
+    "name": "Сушёная клубника",
     "category": "dried",
     "price": 450,
     "unit": "500 г",
@@ -906,7 +916,7 @@
     "price": 250,
     "unit": "400 г",
     "image": "https://avatars.mds.yandex.net/i?id=8f05dd54fef05cc91a8b53adf13aa6d297e429b0-4497405-images-thumbs&n=13",
-    "description": "Сушёное манго в шоколаде. Двойное удовольствие. 400 г.",
+    "description": "Сушёное манго в шоколаде. 400 г.",
     "benefits": "🥭 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -926,7 +936,7 @@
     "price": 400,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=6502a932ad078d8ee4bab11d7e3f7afe95c14f7d-13240502-images-thumbs&n=13",
-    "description": "Сушёная папайя. Экзотический перекус. 500 г.",
+    "description": "Сушёная папайя. Экзотика. 500 г.",
     "benefits": "🥭 Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
@@ -936,7 +946,7 @@
     "price": 450,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=52857ea342eb8605c430d32b636fbecf6d79182d-4461245-images-thumbs&n=13",
-    "description": "Сушёная маракуйя. Яркий тропический вкус. 500 г.",
+    "description": "Сушёная маракуйя. 500 г.",
     "benefits": "🥭 Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
@@ -964,9 +974,9 @@
     "name": "Хлопковая конфета с какао",
     "category": "sweets",
     "price": 80,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=a75e416cd31a9c7a3e503bc55c2d3ae9975bcbd2-16479369-images-thumbs&n=13",
-    "description": "Нежная хлопковая конфета со вкусом какао. Тает во рту.",
+    "description": "Нежная хлопковая конфета со вкусом какао.",
     "benefits": "🍬 Вкус | 🍫 Какао | 😋 Наслаждение"
   },
   {
@@ -974,9 +984,9 @@
     "name": "Хлопковая конфета с ванилью",
     "category": "sweets",
     "price": 80,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=bba3bdfb9fda94f843d8d5fdd6fabb9c9bdf9aa1-5247581-images-thumbs&n=13",
-    "description": "Нежная хлопковая конфета со вкусом ванили. Воздушное лакомство.",
+    "description": "Нежная хлопковая конфета со вкусом ванили.",
     "benefits": "🍬 Вкус | 🍦 Ваниль | 😋 Наслаждение"
   },
   {
@@ -986,7 +996,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=3d370001cb1581d0193e4dc01ebf8a7f801ff5ac-5310919-images-thumbs&n=13",
-    "description": "Самаркандская халва с фисташками. Восточная сладость высшего качества.",
+    "description": "Самаркандская халва с фисташками.",
     "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
   },
   {
@@ -996,7 +1006,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=7a7421002d3267b45a92a84a5a6ca89a038f95fd-7593915-images-thumbs&n=13",
-    "description": "Самаркандская халва с молочным шоколадом. Нежный вкус.",
+    "description": "Самаркандская халва с молочным шоколадом.",
     "benefits": "🍫 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
@@ -1016,7 +1026,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=45a9716fcb59a457b567a4cbfcdd5cc71b03c636-10650891-images-thumbs&n=13",
-    "description": "Самаркандская халва со вкусом граната. Кисло-сладкое сочетание.",
+    "description": "Самаркандская халва со вкусом граната.",
     "benefits": "🍎 Вкус | 🛡️ Иммунитет | 😋 Наслаждение"
   },
   {
@@ -1026,7 +1036,7 @@
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=65d07bb9ef4d827a9ffd8834732f1dca8d67e6e9-5876461-images-thumbs&n=13",
-    "description": "Кунжутная халва с ванилью. Ароматная, нежная.",
+    "description": "Кунжутная халва с ванилью.",
     "benefits": "🍦 Ваниль | ☀️ Энергия | 😋 Вкус"
   },
   {
@@ -1036,7 +1046,7 @@
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=e638457282813406b62903a7155058c96e4c317c-17395735-images-thumbs&n=13",
-    "description": "Кунжутная халва с фисташками. Восточный деликатес.",
+    "description": "Кунжутная халва с фисташками.",
     "benefits": "💪 Белок | ☀️ Энергия | 😋 Вкус"
   },
   {
@@ -1046,7 +1056,7 @@
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=9fbaed1ed5265ace4f537fd8ae99cc3c7ec6df4e-13092708-images-thumbs&n=13",
-    "description": "Кунжутная халва с какао. Шоколадный вкус востока.",
+    "description": "Кунжутная халва с какао.",
     "benefits": "🍫 Какао | ☀️ Энергия | 😋 Вкус"
   },
   {
@@ -1056,7 +1066,7 @@
     "price": 50,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=fd78c7058f17e9106ddbc3db86c623f09e7b18f4-8340522-images-thumbs&n=13",
-    "description": "Классическая подсолнечная халва. Вкус детства.",
+    "description": "Классическая подсолнечная халва.",
     "benefits": "☀️ Энергия | 💪 Белок | 😋 Вкус"
   },
   {
@@ -1066,7 +1076,7 @@
     "price": 70,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=7f81f99deb29105b05f0ddb336adf029c5043453-10229484-images-thumbs&n=13",
-    "description": "Самаркандская халва со вкусом молочного пломбира.",
+    "description": "Самаркандская халва со вкусом пломбира.",
     "benefits": "🍦 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
@@ -1076,7 +1086,7 @@
     "price": 70,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=0765101be9c8a4b5ac5dcb019c8231bae2519824-5603739-images-thumbs&n=13",
-    "description": "Кокандская сливочная халва с фисташками и грецким орехом.",
+    "description": "Кокандская сливочная халва с орешками.",
     "benefits": "💪 Белок | 🥛 Сливки | 😋 Вкус"
   },
   {
@@ -1086,7 +1096,7 @@
     "price": 230,
     "unit": "400 г",
     "image": "https://avatars.mds.yandex.net/i?id=4e45959f3ddc8052cef7c0de796b962aa4619793-5281399-images-thumbs&n=13",
-    "description": "Вафли с арахисом. Хрустящие, сытные. Упаковка 400 г.",
+    "description": "Вафли с арахисом. Упаковка 400 г.",
     "benefits": "💪 Белок | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -1096,7 +1106,7 @@
     "price": 250,
     "unit": "400 г",
     "image": "https://avatars.mds.yandex.net/i?id=4763760863568847aa392e8789e54b275ba1a407-8750570-images-thumbs&n=13",
-    "description": "Шоколадно-молочные вафли. Нежное лакомство. Упаковка 400 г.",
+    "description": "Шоколадно-молочные вафли. 400 г.",
     "benefits": "🍫 Вкус | 🥛 Молоко | 😋 Наслаждение"
   },
   {
@@ -1106,7 +1116,7 @@
     "price": 230,
     "unit": "350 г",
     "image": "https://avatars.mds.yandex.net/i?id=04e352f2e2651134612006221eb27f56e2c62717-5347559-images-thumbs&n=13",
-    "description": "Печенье без сахара. Полезный перекус. 350 г.",
+    "description": "Печенье без сахара. 350 г.",
     "benefits": "🍪 Диета | 💪 Здоровье | 😋 Вкус"
   },
   {
@@ -1116,7 +1126,7 @@
     "price": 100,
     "unit": "80 г",
     "image": "https://avatars.mds.yandex.net/i?id=42963a75a7630238e213783aedcf4833580fae1b-8129183-images-thumbs&n=13",
-    "description": "Чурчхела со вкусом абрикоса. Виноградный сок и орехи. ~80 г.",
+    "description": "Чурчхела со вкусом абрикоса. ~80 г.",
     "benefits": "🍑 Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
@@ -1126,7 +1136,7 @@
     "price": 100,
     "unit": "80 г",
     "image": "https://avatars.mds.yandex.net/i?id=0aa816f640e12827f6477303fa6d0781ea455f2c-4571989-images-thumbs&n=13",
-    "description": "Чурчхела со вкусом апельсина. Цитрусовая свежесть. ~80 г.",
+    "description": "Чурчхела со вкусом апельсина. ~80 г.",
     "benefits": "🍊 Вкус | 🛡️ Иммунитет | 😋 Наслаждение"
   },
   {
@@ -1136,7 +1146,7 @@
     "price": 200,
     "unit": "140 г",
     "image": "https://avatars.mds.yandex.net/i?id=614a11c78649e8ac82e818724e63d071ba2a032e-9198228-images-thumbs&n=13",
-    "description": "Чурчхела с миндалём. Крупная, сытная. ~140 г.",
+    "description": "Чурчхела с миндалём. ~140 г.",
     "benefits": "💪 Белок | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -1146,7 +1156,7 @@
     "price": 200,
     "unit": "140 г",
     "image": "https://avatars.mds.yandex.net/i?id=90d9fcce57d1da962a73280dfa48198f385813a7-5329285-images-thumbs&n=13",
-    "description": "Чурчхела с фундуком. Ореховое удовольствие. ~140 г.",
+    "description": "Чурчхела с фундуком. ~140 г.",
     "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
   },
   {
@@ -1156,7 +1166,7 @@
     "price": 200,
     "unit": "140 г",
     "image": "https://avatars.mds.yandex.net/i?id=27c67b517000119f5acfe0b9a0df73de60d8391a-5026103-images-thumbs&n=13",
-    "description": "Чурчхела с грецким орехом. Классика. ~140 г.",
+    "description": "Чурчхела с грецким орехом. ~140 г.",
     "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
   },
   {
@@ -1166,7 +1176,7 @@
     "price": 220,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=30ab803be978f077b8cf37838fcd956e352950c0-8437019-images-thumbs&n=13",
-    "description": "Малина в лайме. Кисло-сладкая свежесть в шоколаде.",
+    "description": "Малина в лайме. Кисло-сладкая свежесть.",
     "benefits": "🍓 Вкус | 🍋 Лайм | 😋 Наслаждение"
   },
   {
@@ -1176,7 +1186,7 @@
     "price": 220,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=3a7413c818281db67a3e1298b8e767915f90e2f8-7545494-images-thumbs&n=13",
-    "description": "Клубника в тёмном шоколаде. Изысканное сочетание.",
+    "description": "Клубника в тёмном шоколаде.",
     "benefits": "🍓 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -1186,7 +1196,7 @@
     "price": 220,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=cf07cd165f9778abf657fe4417eb9f47da543c85-4756892-images-thumbs&n=13",
-    "description": "Клубника со вкусом лайма. Освежающий десерт.",
+    "description": "Клубника со вкусом лайма.",
     "benefits": "🍓 Вкус | 🍋 Лайм | 😋 Наслаждение"
   },
   {
@@ -1196,7 +1206,7 @@
     "price": 200,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=f225e2f2e5bf130f183c560fd895315f8c3b7db5-10467522-images-thumbs&n=13",
-    "description": "Маракуйя в молочном шоколаде. Экзотический десерт.",
+    "description": "Маракуйя в молочном шоколаде.",
     "benefits": "🥭 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -1206,7 +1216,7 @@
     "price": 200,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=19b759a95be7ba466861d2ef6d8459131143e81e-10385082-images-thumbs&n=13",
-    "description": "Маракуйя в шоколаде со вкусом чёрной смородины.",
+    "description": "Маракуйя в шоколаде со вкусом смородины.",
     "benefits": "🥭 Вкус | 🍇 Смородина | 😋 Наслаждение"
   },
   {
@@ -1223,10 +1233,10 @@
     "id": 132,
     "name": "Манго в шоколаде со вкусом фруктов",
     "category": "sweets",
-    "price": 200,
+    "price": 220,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=ed231554ca59e9c736759a704b9c6868841b752a-3493287-images-thumbs&n=13",
-    "description": "Манго в шоколаде с фруктовым вкусом. Тропики в шоколаде.",
+    "description": "Манго в шоколаде с фруктовым вкусом.",
     "benefits": "🥭 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -1236,7 +1246,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=d98099d7dbe90da6469372c814a7ab39de58b344-5263029-images-thumbs&n=13",
-    "description": "Грецкий орех в шоколаде с какао-присыпкой. Благородный вкус.",
+    "description": "Грецкий орех в шоколаде с какао-присыпкой.",
     "benefits": "💪 Белок | 🍫 Какао | 😋 Вкус"
   },
   {
@@ -1246,7 +1256,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=75f46c922cd0a9cf857bc3741f93a55044b1fbea-4055065-images-thumbs&n=13",
-    "description": "Грецкий орех в молочном шоколаде. Нежное сочетание.",
+    "description": "Грецкий орех в молочном шоколаде.",
     "benefits": "💪 Белок | 🍫 Шоколад | 😋 Вкус"
   },
   {
@@ -1256,7 +1266,7 @@
     "price": 150,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=178a2d61525a1acbf445d0babfffa4d960d823f5-11485557-images-thumbs&n=13",
-    "description": "Финики с грецким орехом в молочном шоколаде. Полезный десерт.",
+    "description": "Финики с грецким орехом в шоколаде.",
     "benefits": "🍯 Вкус | 💪 Белок | 😋 Наслаждение"
   },
   {
@@ -1266,7 +1276,7 @@
     "price": 200,
     "unit": "200 г",
     "image": "https://avatars.mds.yandex.net/i?id=121df2123a7a6af9017ac697920858fa71a41e02-3492535-images-thumbs&n=13",
-    "description": "Финики с миндалём. Изысканное сочетание. Упаковка 200 г.",
+    "description": "Финики с миндалём. Упаковка 200 г.",
     "benefits": "🍯 Вкус | 💪 Белок | 😋 Наслаждение"
   },
   {
@@ -1276,7 +1286,7 @@
     "price": 200,
     "unit": "200 г",
     "image": "https://avatars.mds.yandex.net/i?id=dea38fcfc4fd55cfa91374306fc5f68f448e709b-5332718-images-thumbs&n=13",
-    "description": "Финики с грецким орехом. Классика восточных сладостей. 200 г.",
+    "description": "Финики с грецким орехом. 200 г.",
     "benefits": "🍯 Вкус | 💪 Белок | 😋 Наслаждение"
   },
   {
@@ -1286,7 +1296,7 @@
     "price": 600,
     "unit": "500-600 г",
     "image": "https://avatars.mds.yandex.net/i?id=aea64905eae8467bfdc174812f56ce6a2a6f4c5b-5228182-images-thumbs&n=13",
-    "description": "Королевские финики Royal Mubarak. Крупные, отборные. 500-600 г.",
+    "description": "Королевские финики Royal Mubarak. 500-600 г.",
     "benefits": "👑 Элитный | 🍯 Сладость | 💪 Здоровье"
   },
   {
@@ -1296,7 +1306,7 @@
     "price": 500,
     "unit": "250-300 г",
     "image": "https://avatars.mds.yandex.net/i?id=109bc5660b452c654317ac5e63c6f12d9cf6c88f-12752501-images-thumbs&n=13",
-    "description": "Королевские финики. Меньшая упаковка 250-300 г.",
+    "description": "Королевские финики. 250-300 г.",
     "benefits": "👑 Элитный | 🍯 Сладость | 💪 Здоровье"
   },
   {
@@ -1306,7 +1316,7 @@
     "price": 250,
     "unit": "550 г",
     "image": "https://avatars.mds.yandex.net/i?id=8f85bdb6c8c29e0ac7dc6dc0bf15dc87b4af60e1-5743633-images-thumbs&n=13",
-    "description": "Финики Royal Dates. Сочные, сладкие. 550 г.",
+    "description": "Финики Royal Dates. Сочные. 550 г.",
     "benefits": "🍯 Сладость | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -1316,7 +1326,7 @@
     "price": 250,
     "unit": "550 г",
     "image": "https://avatars.mds.yandex.net/i?id=b7d9eb19269dbbc6daa5b5c5c4c06d9d7beb532e-12726722-images-thumbs&n=13",
-    "description": "Финики сорта Мазафати (Суман). Мягкие, карамельные. 550 г.",
+    "description": "Финики Мазафати. Мягкие. 550 г.",
     "benefits": "🍯 Сладость | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -1326,7 +1336,7 @@
     "price": 350,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=0e2eee37ee2a7c240dda52ac2f7c2067892d75f9-4551637-images-thumbs&n=13",
-    "description": "Финики Sukkary. Сорт «сахарный», очень сладкие. 500 г.",
+    "description": "Финики Sukkary. Очень сладкие. 500 г.",
     "benefits": "🍯 Сладость | ⚡ Энергия | 😋 Вкус"
   },
   {
@@ -1336,7 +1346,7 @@
     "price": 70,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=520ef444967da11a26148a136279223c1929603d-12762283-images-thumbs&n=13",
-    "description": "Шербет – смесь орехов, глазури и мёда. Восточная энергия.",
+    "description": "Шербет – смесь орехов, глазури и мёда.",
     "benefits": "🍯 Мёд | 💪 Белок | ⚡ Энергия"
   },
   {
@@ -1346,27 +1356,27 @@
     "price": 110,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=71aec1154f7c625ef56d677d1830fb857caa347d-12420613-images-thumbs&n=13",
-    "description": "Арахис в разноцветной сахарной глазури. Весёлый перекус.",
+    "description": "Арахис в разноцветной сахарной глазури.",
     "benefits": "💪 Белок | 🍬 Сладость | 😋 Вкус"
   },
   {
     "id": 145,
-    "name": "Конфеты глазированные ассорти (малина, фисташки, мультизлаки и др.)",
+    "name": "Конфеты глазированные ассорти",
     "category": "sweets",
     "price": 100,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=ec8d49ace4651e1a22e68b34b7d19b3b09c6e24b-4820616-images-thumbs&n=13",
-    "description": "Глазированные конфеты ассорти: малина, фисташки, клюква, кешью. Микс вкусов.",
+    "description": "Глазированные конфеты ассорти.",
     "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
     "id": 146,
-    "name": "Конфеты глазированные «Дедушкины воспоминания»",
+    "name": "Конфеты «Дедушкины воспоминания»",
     "category": "sweets",
     "price": 85,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=f3c077185b0b08bbf1859fbd5592d412c2c91ae7-16336996-images-thumbs&n=13",
-    "description": "Глазированные конфеты. Ностальгический вкус детства.",
+    "description": "Глазированные конфеты. Вкус детства.",
     "benefits": "🍬 Вкус | ❤️ Ностальгия | 😋 Наслаждение"
   },
   {
@@ -1376,17 +1386,17 @@
     "price": 100,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=7981dc13eab0a4f363901c33f43904c78de43bbd-5281109-images-thumbs&n=13",
-    "description": "Атаг премиум Di Doo Dah. Ассорти премиальных конфет.",
+    "description": "Атаг премиум Di Doo Dah. Ассорти.",
     "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
     "id": 148,
     "name": "Мама Женя ассорти",
     "category": "sweets",
-    "price": 80,
+    "price": 100,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=093bea02c010347f437f61e000a5870478d6e80f-4904220-images-thumbs&n=13",
-    "description": "Конфеты Мама Женя. Ассорти вкусов, домашний рецепт.",
+    "description": "Конфеты Мама Женя. Ассорти вкусов.",
     "benefits": "🍬 Вкус | ❤️ Домашнее | 😋 Наслаждение"
   },
   {
@@ -1396,7 +1406,7 @@
     "price": 80,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=409547046af34166407873bd42baede949e4d6b8-4055778-images-thumbs&n=13",
-    "description": "Конфеты «Вместе вкуснее». Ассорти для семейного чаепития.",
+    "description": "Конфеты «Вместе вкуснее». Ассорти.",
     "benefits": "🍬 Вкус | ❤️ Семья | 😋 Наслаждение"
   },
   {
@@ -1406,7 +1416,7 @@
     "price": 70,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=7cd2d4a05c68de34a6777156fc798347b03bdc6f-5175280-images-thumbs&n=13",
-    "description": "Рахатовские конфеты. Ягоды и орехи в шоколаде.",
+    "description": "Рахатовские конфеты. Ягоды и орехи.",
     "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -1414,9 +1424,9 @@
     "name": "BAYAN sulu эвкалипт & ментол",
     "category": "sweets",
     "price": 60,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=5faa817757bbccb687d2b31375d473bb9bd80578-5580236-images-thumbs&n=13",
-    "description": "Конфеты с эвкалиптом и ментолом. Освежающие.",
+    "description": "Конфеты с эвкалиптом и ментолом.",
     "benefits": "🍃 Свежесть | 😋 Вкус | 🌿 Ментол"
   },
   {
@@ -1424,7 +1434,7 @@
     "name": "Смайлики конфетки",
     "category": "sweets",
     "price": 60,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=96cd7c940dd1fe51478c4968504c7904e655bb9b-5283588-images-thumbs&n=13",
     "description": "Конфетки Смайлики. Весёлые, фруктовые.",
     "benefits": "😊 Веселье | 🍬 Вкус | 😋 Наслаждение"
@@ -1434,7 +1444,7 @@
     "name": "Toffany",
     "category": "sweets",
     "price": 60,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=4fdcee01a813bcbd06be4613089d3b9711cbf42d-13190676-images-thumbs&n=13",
     "description": "Конфеты Toffany. Ассорти вкусов.",
     "benefits": "🍬 Вкус | ☀️ Энергия | 😋 Наслаждение"
@@ -1444,9 +1454,9 @@
     "name": "Леденцы со вкусом кофе",
     "category": "sweets",
     "price": 60,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=9df1a482bde56ce49a3ccd085b906707848580b2-16339581-images-thumbs&n=13",
-    "description": "Леденцы со вкусом кофе. Для бодрости.",
+    "description": "Леденцы со вкусом кофе.",
     "benefits": "☕ Вкус | ⚡ Энергия | 😋 Наслаждение"
   },
   {
@@ -1454,9 +1464,9 @@
     "name": "Китайские освежающие конфетки",
     "category": "sweets",
     "price": 75,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=fde9386631bd0d8d7d9a775a13f122eeba26245c-12997438-images-thumbs&n=13",
-    "description": "Китайские освежающие конфетки. Фруктовый микс.",
+    "description": "Китайские освежающие конфетки.",
     "benefits": "🍃 Свежесть | 🍬 Вкус | 😋 Наслаждение"
   },
   {
@@ -1464,9 +1474,9 @@
     "name": "SWEET с арахисом",
     "category": "sweets",
     "price": 65,
-    "unit": "упак",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=1604ea89e4abf450680682eebe173920449ccd27-5220612-images-thumbs&n=13",
-    "description": "Конфеты SWEET с арахисом. Хрустящие, сладкие.",
+    "description": "Конфеты SWEET с арахисом.",
     "benefits": "💪 Белок | 🍬 Сладость | 😋 Вкус"
   },
   {
@@ -1474,9 +1484,9 @@
     "name": "Грильяж ягодный в шоколаде (Рахат)",
     "category": "sweets",
     "price": 45,
-    "unit": "уп",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=cd97f9432dae1e2eff27424cef9341b7680935a3-5288037-images-thumbs&n=13",
-    "description": "Грильяж ягодный в шоколаде от Рахат. Хрустящий.",
+    "description": "Грильяж ягодный в шоколаде.",
     "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
   },
   {
@@ -1484,9 +1494,9 @@
     "name": "Барбарис",
     "category": "sweets",
     "price": 40,
-    "unit": "уп",
+    "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=764a9cd50b4ed7541ba52ecf0214888e87bee8e6-5233239-images-thumbs&n=13",
-    "description": "Конфеты Барбарис. Классический кисло-сладкий вкус.",
+    "description": "Конфеты Барбарис. Кисло-сладкий вкус.",
     "benefits": "🍬 Вкус | 🍒 Ягоды | 😋 Наслаждение"
   },
   {
@@ -1494,9 +1504,9 @@
     "name": "Мармеладки глазки",
     "category": "sweets",
     "price": 25,
-    "unit": "уп",
+    "unit": "шт",
     "image": "https://avatars.mds.yandex.net/i?id=ab251a1eda0bdd31cffe5d9a848309b01a3d706e-11920176-images-thumbs&n=13",
-    "description": "Мармеладки Глазки. Желейные, забавные.",
+    "description": "Мармеладки Глазки. Желейные.",
     "benefits": "👁️ Забава | 🍬 Вкус | 😋 Наслаждение"
   },
   {
@@ -1504,9 +1514,9 @@
     "name": "Мармеладки пандачки",
     "category": "sweets",
     "price": 25,
-    "unit": "уп",
+    "unit": "шт",
     "image": "https://avatars.mds.yandex.net/i?id=f7c38d7b8bdfcf1bfdffd96adaf072001d0476e2-5267107-images-thumbs&n=13",
-    "description": "Мармеладки Пандачки. Милые желейные фигурки.",
+    "description": "Мармеладки Пандачки. Милые фигурки.",
     "benefits": "🐼 Милота | 🍬 Вкус | 😋 Наслаждение"
   },
   {
@@ -1516,7 +1526,7 @@
     "price": 300,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=6cd1142d10562919db84065b90f67227b8d0a24a-4571688-images-thumbs&n=13",
-    "description": "Узбекский жёлтый сахар Навот. Традиционная сладость к чаю.",
+    "description": "Узбекский жёлтый сахар Навот.",
     "benefits": "🍬 Сладость | ☕ Чай | 😋 Традиция"
   },
   {
@@ -1526,7 +1536,7 @@
     "price": 300,
     "unit": "500 г",
     "image": "https://avatars.mds.yandex.net/i?id=0b7edb1e5cc4b2c2893b948cea7de052160593fa-4435069-images-thumbs&n=13",
-    "description": "Пахлава. Восточная сладость из слоёного теста с орехами. 500 г.",
+    "description": "Пахлава. Восточная сладость. 500 г.",
     "benefits": "🍯 Мёд | 💪 Орехи | 😋 Вкус"
   },
   {
@@ -1536,17 +1546,17 @@
     "price": 150,
     "unit": "250 г",
     "image": "https://avatars.mds.yandex.net/i?id=86ac78cf6348ebc30ff31cc9da12460e9858e3c0-8148275-images-thumbs&n=13",
-    "description": "Пахлава. Небольшая упаковка 250 г.",
+    "description": "Пахлава. 250 г.",
     "benefits": "🍯 Мёд | 💪 Орехи | 😋 Вкус"
   },
   {
     "id": 164,
-    "name": "Дубайский шоколад молочный",
+    "name": "Дубайский белый шоколад",
     "category": "sweets",
     "price": 250,
-    "unit": "плитка",
-    "image": "https://avatars.mds.yandex.net/i?id=31c874333d814b740df0444892fc540fbffa5a68-5326574-images-thumbs&n=13",
-    "description": "Дубайский молочный шоколад. Премиум-качество.",
+    "unit": "100 г",
+    "image": "https://avatars.mds.yandex.net/i?id=e7df31825ad7a26fafd89ab44427b4c381a5022b-8354186-images-thumbs&n=13",
+    "description": "Дубайский белый шоколад. Премиум.",
     "benefits": "🍫 Шоколад | 👑 Премиум | 😋 Вкус"
   },
   {
@@ -1566,7 +1576,7 @@
     "price": 100,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=7e89dddc7a7b04f7ac4e8897e4b8d5b298677601-5297283-images-thumbs&n=13",
-    "description": "Шоколад Кит-Кат. Хрустящие вафли в шоколаде.",
+    "description": "Шоколад Кит-Кат. Хрустящие вафли.",
     "benefits": "🍫 Шоколад | 🧇 Вафли | 😋 Вкус"
   },
   {
@@ -1576,7 +1586,7 @@
     "price": 230,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=a6a29840aed7f7bd0fef0ca4bc8fe3689730729e-8196573-images-thumbs&n=13",
-    "description": "Молочный шоколад из Казахстана в плитке.",
+    "description": "Молочный шоколад из Казахстана.",
     "benefits": "🍫 Шоколад | 🇰🇿 Казахстан | 😋 Вкус"
   },
   {
@@ -1586,7 +1596,7 @@
     "price": 200,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=504a8d78630869289b60a518f572c60ff0263eef-4383701-images-thumbs&n=13",
-    "description": "Молочный шоколад из Казахстана среднего размера.",
+    "description": "Молочный шоколад из Казахстана.",
     "benefits": "🍫 Шоколад | 🇰🇿 Казахстан | 😋 Вкус"
   },
   {
@@ -1596,7 +1606,7 @@
     "price": 45,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=04dd991ff250970eca573a5270eedf9dedb7e33c-12602658-images-thumbs&n=13",
-    "description": "Маленькая плитка молочного шоколада из Казахстана.",
+    "description": "Маленькая плитка шоколада из Казахстана.",
     "benefits": "🍫 Шоколад | 🇰🇿 Казахстан | 🎒 Перекус"
   },
   {
@@ -1606,7 +1616,7 @@
     "price": 220,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=14185636f81e0704212aaa342e67a9af0827f833-4575769-images-thumbs&n=13",
-    "description": "Горький шоколад Perfection с 65% какао.",
+    "description": "Горький шоколад Perfection 65% какао.",
     "benefits": "🍫 Какао | ❤️ Сердце | 😋 Вкус"
   },
   {
@@ -1616,7 +1626,7 @@
     "price": 230,
     "unit": "плитка",
     "image": "https://avatars.mds.yandex.net/i?id=bf0de37e29fe9d43580ae858cbc4b2ce41fe962e-5865919-images-thumbs&n=13",
-    "description": "Горький шоколад Perfection с 80% какао.",
+    "description": "Горький шоколад Perfection 80% какао.",
     "benefits": "🍫 Какао | ❤️ Сердце | 😋 Вкус"
   },
   {
@@ -1631,16 +1641,46 @@
   },
   {
     "id": 173,
+    "name": "Кокосовые конфеты сосательные",
+    "category": "sweets",
+    "price": 60,
+    "unit": "100 г",
+    "image": "https://basket-18.wbbasket.ru/vol3030/part303045/303045992/images/big/1.webp",
+    "description": "Кокосовые конфеты сосательные.",
+    "benefits": "🥥 Кокос | 🍬 Сладость | 😋 Вкус"
+  },
+  {
+    "id": 174,
+    "name": "Клубника в белой шок. глазури фруктовый микс",
+    "category": "sweets",
+    "price": 230,
+    "unit": "100 г",
+    "image": "https://cdn.rf-sp.ru/31/fb/31fb5f4cb104e558be61877721e6bbcc.jpg",
+    "description": "Клубника в белой шоколадной глазури.",
+    "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
+  },
+  {
+    "id": 175,
+    "name": "Вафли молочные 400 г",
+    "category": "sweets",
+    "price": 250,
+    "unit": "400 г",
+    "image": "https://avatars.mds.yandex.net/i?id=bb379eacf100a74a4711116636bae8e6fd0db662-12927189-images-thumbs&n=13",
+    "description": "Вафли молочные. Упаковка 400 г.",
+    "benefits": "🧇 Вкус | 🥛 Молоко | 😋 Наслаждение"
+  },
+  {
+    "id": 176,
     "name": "Фруктовая смесь",
     "category": "nuts",
     "price": 35,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=bb42d66a56ca725f0d3cc2c611d8c0802a3e7ca1-3833005-images-thumbs&n=13",
-    "description": "Фруктовая смесь. Витаминный микс сухофруктов.",
+    "description": "Фруктовая смесь. Витаминный микс.",
     "benefits": "🍎 Витамины | ⚡ Энергия | 😋 Вкус"
   },
   {
-    "id": 174,
+    "id": 177,
     "name": "Курут обычный 100 г",
     "category": "dairy",
     "price": 120,
@@ -1650,7 +1690,7 @@
     "benefits": "🧀 Закуска | 💪 Белок | 😋 Вкус"
   },
   {
-    "id": 175,
+    "id": 178,
     "name": "Курут сливочный 100 г",
     "category": "dairy",
     "price": 150,
@@ -1660,467 +1700,537 @@
     "benefits": "🧀 Закуска | 💪 Белок | 😋 Вкус"
   },
   {
-    "id": 176,
+    "id": 179,
     "name": "Лагман дунганский",
     "category": "grocery",
     "price": 150,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=d3ec8f6d30afcd908ce18cccd82bc3c6c6a87821-9386274-images-thumbs&n=13",
-    "description": "Настоящий дунганский лагман. Домашняя лапша ручной работы.",
+    "description": "Настоящий дунганский лагман.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 177,
+    "id": 180,
     "name": "Лапша для гарнира",
     "category": "grocery",
     "price": 150,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=6fc8752bb7217307c5a7b336219cda15a00491c5-5910573-images-thumbs&n=13",
-    "description": "Лапша для гарнира. Универсальная, быстро варится.",
+    "description": "Лапша для гарнира.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 178,
+    "id": 181,
     "name": "Лапша к мясу по-казахски",
     "category": "grocery",
     "price": 150,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=e4c96978a97eb7da1158cbeb9ce4e2a1cb399106-13082451-images-thumbs&n=13",
-    "description": "Лапша к мясу по-казахски. Традиционный рецепт бешбармака.",
+    "description": "Лапша к мясу по-казахски.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 179,
+    "id": 182,
     "name": "Лапша уйгурская",
     "category": "grocery",
     "price": 150,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=fec09cb5884a7db4735006dcd745195c665807fa-12500826-images-thumbs&n=13",
-    "description": "Уйгурская лапша. Для лагмана и супов.",
+    "description": "Уйгурская лапша.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 180,
+    "id": 183,
     "name": "Лапша домашняя особо тонкая",
     "category": "grocery",
     "price": 120,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=275de28f2bed8f773e3af9588ca034f993e24997-6894630-images-thumbs&n=13",
-    "description": "Домашняя тонкая лапша. Для нежных супов.",
+    "description": "Домашняя тонкая лапша.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 181,
+    "id": 184,
     "name": "Лапша тонкая для бешбармака",
     "category": "grocery",
     "price": 120,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=9f98199ac121da6bdd410ea2a10ff0b4768f39d8-5887023-images-thumbs&n=13",
-    "description": "Лапша для бешбармака. Тонкая, сочная.",
+    "description": "Лапша для бешбармака.",
     "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
   },
   {
-    "id": 182,
-    "name": "Лапша домашняя для лагмана тонкая ручная",
+    "id": 185,
+    "name": "Лапша домашняя для лагмана",
     "category": "grocery",
     "price": 300,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=4b13924fa2e6d7d63733cef1e8a545c0a8119de9-4372726-images-thumbs&n=13",
-    "description": "Тонкая ручная лапша для лагмана. Высший сорт.",
+    "description": "Тонкая ручная лапша для лагмана.",
     "benefits": "🍜 Вкус | 👨‍🍳 Традиция | ✨ Качество"
   },
   {
-    "id": 184,
+    "id": 186,
+    "name": "Домашний лагман 1 кг",
+    "category": "grocery",
+    "price": 300,
+    "unit": "кг",
+    "image": "https://avatars.mds.yandex.net/i?id=e668333c8bfe939ac1f3e3ead7a91172910612db-4688474-images-thumbs&n=13",
+    "description": "Домашний лагман ручной работы. 1 кг.",
+    "benefits": "🍜 Лагман | 👨‍🍳 Готовка | 😋 Вкус"
+  },
+  {
+    "id": 187,
+    "name": "Лапша дунганская тонкая в упаковке",
+    "category": "grocery",
+    "price": 150,
+    "unit": "упак",
+    "image": "https://basket-10.wbbasket.ru/vol1323/part132322/132322356/images/big/1.webp",
+    "description": "Дунганская тонкая лапша в упаковке.",
+    "benefits": "🍜 Вкус | ⏱️ Быстро | 👨‍🍳 Удобство"
+  },
+  {
+    "id": 188,
     "name": "Рис Лазер 1 кг",
     "category": "grocery",
     "price": 250,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=2ad3f507fc8a4d8d0973a349ff4889949e227dc6-4080872-images-thumbs&n=13",
-    "description": "Отборный рис сорта Лазер. Рассыпчатый и ароматный.",
+    "image": "https://avatars.mds.yandex.net/i?id=8f7328a54b940be41b2d9429b793ec767c6fbd6d-12623317-images-thumbs&n=13",
+    "description": "Отборный рис сорта Лазер.",
     "benefits": "🍚 Гарнир | 👨‍🍳 Плов | 😋 Вкус"
   },
   {
-    "id": 185,
-    "name": "Рис Лазер Узбекистан 1 сорт 1 кг",
+    "id": 189,
+    "name": "Рис Киргизия 1 сорт 1 кг",
     "category": "grocery",
     "price": 500,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=8bdfbfbc00dbb9eef2a7e17977d77f96beff6533-16893175-images-thumbs&n=13",
-    "description": "Элитный узбекский рис Лазер первого сорта.",
+    "image": "https://avatars.mds.yandex.net/get-mpic/11549745/2a00000195a80ab2f032bfbb87ac4627ccfe/orig",
+    "description": "Элитный киргизский рис первого сорта.",
     "benefits": "🍚 Плов | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 186,
+    "id": 190,
     "name": "Рис бурый для плова 1 кг",
     "category": "grocery",
     "price": 300,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=dfb3f1a1bdb17bfa39feb52066af9b4178289691-5671528-images-thumbs&n=13",
-    "description": "Бурый рис для плова. Полезнее белого.",
+    "image": "https://avatars.mds.yandex.net/get-mpic/5281967/img_id2749613301877567474.jpeg/orig",
+    "description": "Бурый рис для плова.",
     "benefits": "🍚 Плов | 💪 Здоровье | 😋 Вкус"
   },
   {
-    "id": 187,
+    "id": 191,
     "name": "Рис Мустафа 1 кг",
     "category": "grocery",
     "price": 250,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=745adff0b4a2d97cfb70736ac4fd64a7c624cf63-5336888-images-thumbs&n=13",
-    "description": "Рис сорта Мустафа. Отлично подходит для гарниров.",
+    "description": "Рис сорта Мустафа.",
     "benefits": "🍚 Гарнир | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 188,
-    "name": "Чавари (джавари) крупа для супа 1 кг",
+    "id": 192,
+    "name": "Чавари (джавари) крупа для супа",
     "category": "grocery",
     "price": 280,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=ed78728db68fbfeca9d05f61271cad1df2eb2241-5486461-images-thumbs&n=13",
-    "description": "Традиционная крупа для супов и каш.",
+    "description": "Традиционная крупа для супов.",
     "benefits": "🍲 Супы | 💪 Здоровье | 😋 Вкус"
   },
   {
-    "id": 189,
+    "id": 193,
     "name": "Чечевица оранжевая 1 кг",
     "category": "grocery",
     "price": 200,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=3206eab40a5fb5018bcb556e09628e2cf9d45ef2-5333794-images-thumbs&n=13",
-    "description": "Оранжевая чечевица. Быстро варится, богата белком.",
+    "description": "Оранжевая чечевица. Богата белком.",
     "benefits": "💪 Белок | 🍲 Супы | 😋 Вкус"
   },
   {
-    "id": 190,
+    "id": 194,
     "name": "Чечевица зелёная 1 кг",
     "category": "grocery",
     "price": 250,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=ff89294c3495822c40ebcd058ae4754cdfc35bb4-10698550-images-thumbs&n=13",
-    "description": "Зелёная чечевица. Полезная и сытная.",
+    "description": "Зелёная чечевица. Сытная.",
     "benefits": "💪 Белок | 🍲 Супы | 😋 Вкус"
   },
   {
-    "id": 191,
+    "id": 195,
     "name": "Маш 1 кг",
     "category": "grocery",
     "price": 250,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=73ab3f6daf40b38a2765076274abbe69c01905f6-5647863-images-thumbs&n=13",
-    "description": "Крупа маш. Традиционный продукт для супов и каш.",
+    "description": "Крупа маш. Для супов и каш.",
     "benefits": "💪 Белок | 🍲 Супы | 😋 Вкус"
   },
   {
-    "id": 192,
+    "id": 196,
     "name": "Фасоль 1 кг",
     "category": "grocery",
     "price": 300,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=4d7d2c1ac282ad2e36429150b19dbc67e3693a6b-4668036-images-thumbs&n=13",
-    "description": "Отборная фасоль. Сытная и полезная.",
+    "description": "Отборная фасоль.",
     "benefits": "💪 Белок | 🍲 Готовка | 😋 Вкус"
   },
   {
-    "id": 193,
+    "id": 197,
     "name": "Нут 1 кг",
     "category": "grocery",
     "price": 300,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=d8e2a61964a3a8812bec0bcc65a802ea97eac2c5-8497057-images-thumbs&n=13",
-    "description": "Турецкий горох нут. Для хумуса и супов.",
+    "description": "Турецкий горох нут.",
     "benefits": "💪 Белок | 🍲 Готовка | 😋 Вкус"
   },
   {
-    "id": 194,
+    "id": 198,
     "name": "Фасоль белая 1 кг",
     "category": "grocery",
     "price": 300,
     "unit": "кг",
     "image": "https://avatars.mds.yandex.net/i?id=d2719b6123b9bcf8443b5ef5a038c7f9fd2a5dbf-5682441-images-thumbs&n=13",
-    "description": "Белая фасоль. Нежная и сытная.",
+    "description": "Белая фасоль. Нежная.",
     "benefits": "💪 Белок | 🍲 Готовка | 😋 Вкус"
   },
   {
-    "id": 195,
+    "id": 199,
     "name": "Масло Зигир 1 л",
     "category": "grocery",
     "price": 350,
     "unit": "л",
     "image": "https://avatars.mds.yandex.net/i?id=440026a8b3b24f907cee04763048b8a6117c21da-5882870-images-thumbs&n=13",
-    "description": "Натуральное масло Зигир для приготовления блюд.",
+    "description": "Натуральное масло Зигир.",
     "benefits": "🫒 Масло | 👨‍🍳 Готовка | 💪 Здоровье"
   },
   {
-    "id": 196,
+    "id": 200,
     "name": "Масло Пахта йоги (Воты) для плова 1 л",
     "category": "grocery",
     "price": 350,
     "unit": "л",
     "image": "https://avatars.mds.yandex.net/i?id=c351d1ba6afcbdaf63ced11074e6e7bcd73443d5-5329285-images-thumbs&n=13",
-    "description": "Традиционное масло для узбекского плова.",
+    "description": "Масло для узбекского плова.",
     "benefits": "🫒 Плов | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 197,
+    "id": 201,
+    "name": "Фунчоза 140 г",
+    "category": "grocery",
+    "price": 130,
+    "unit": "упак",
+    "image": "https://avatars.mds.yandex.net/i?id=4361151887c96aab6ff88fdefb1b67d3dc502005-4555287-images-thumbs&n=13",
+    "description": "Фунчоза. 140 г.",
+    "benefits": "🍜 Лапша | 👨‍🍳 Готовка | 😋 Вкус"
+  },
+  {
+    "id": 202,
+    "name": "Листья нори 10 листов",
+    "category": "grocery",
+    "price": 250,
+    "unit": "упак",
+    "image": "https://avatars.mds.yandex.net/i?id=82f0fc8e03286dfab33e2200f92127e685220159-5219859-images-thumbs&n=13",
+    "description": "Листья нори для роллов.",
+    "benefits": "🍣 Роллы | 👨‍🍳 Готовка | 😋 Вкус"
+  },
+  {
+    "id": 203,
+    "name": "Ядро кедрового ореха 100 г",
+    "category": "nuts",
+    "price": 270,
+    "unit": "100 г",
+    "image": "https://basket-12.wbbasket.ru/vol1766/part176637/176637492/images/c246x328/2.webp",
+    "description": "Ядро кедрового ореха. 100 г.",
+    "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
+  },
+  {
+    "id": 204,
+    "name": "Ядро кедрового ореха 200 г",
+    "category": "nuts",
+    "price": 530,
+    "unit": "200 г",
+    "image": "https://basket-12.wbbasket.ru/vol1766/part176637/176637492/images/c246x328/2.webp",
+    "description": "Ядро кедрового ореха. 200 г.",
+    "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
+  },
+  {
+    "id": 205,
+    "name": "Ядро кедрового ореха 500 г",
+    "category": "nuts",
+    "price": 1350,
+    "unit": "500 г",
+    "image": "https://basket-12.wbbasket.ru/vol1766/part176637/176637492/images/c246x328/2.webp",
+    "description": "Ядро кедрового ореха. 500 г.",
+    "benefits": "💪 Белок | 🧠 Мозг | 😋 Вкус"
+  },
+  {
+    "id": 206,
+    "name": "Калбаса Кызылжар говяжья полукопченая",
+    "category": "grocery",
+    "price": 400,
+    "unit": "шт",
+    "image": "https://avatars.mds.yandex.net/i?id=31e65570a48300076ffa58485a1cd001_l-10233129-images-thumbs&n=13",
+    "description": "Полукопченая говяжья колбаса Кызылжар.",
+    "benefits": "🥩 Мясо | 🍽️ Закуска | 😋 Вкус"
+  },
+  {
+    "id": 207,
     "name": "Чай зелёный «Азерчай» (200 г)",
     "category": "grocery",
     "price": 250,
     "unit": "200 г",
     "image": "https://avatars.mds.yandex.net/i?id=3e57cb791634d9171466ecc8394ac02a836aa5f2-12627675-images-thumbs&n=13",
-    "description": "Ароматный зелёный чай. Традиционный азербайджанский.",
+    "description": "Ароматный зелёный чай.",
     "benefits": "🍵 Антиоксиданты | ❤️ Сердце | ⚡ Бодрость"
   },
   {
-    "id": 198,
+    "id": 208,
     "name": "Чай чёрный «Азерчай» (200 г)",
     "category": "grocery",
     "price": 300,
     "unit": "200 г",
     "image": "https://avatars.mds.yandex.net/i?id=791d5ebf66fe24b7d97e3a1bea356b83325d1a51-5232827-images-thumbs&n=13",
-    "description": "Классический чёрный чай. Насыщенный, бодрящий.",
+    "description": "Классический чёрный чай.",
     "benefits": "🍵 Бодрость | ❤️ Сердце | ☀️ Энергия"
   },
   {
-    "id": 199,
+    "id": 209,
     "name": "Maryam Gold Молочный",
     "category": "grocery",
     "price": 300,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=32648004e9d3e52d0b677c43f60324dcd2fe46f3-17698047-images-thumbs&n=13",
-    "description": "Чай Maryam Gold Молочный. Нежный сливочный вкус.",
+    "description": "Чай Maryam Gold Молочный.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 200,
+    "id": 210,
     "name": "Maryam Gold Вечерний",
     "category": "grocery",
     "price": 300,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=9f1e85ac1e0d31ae74182bfb041bfd8f2ddacb67-6950859-images-thumbs&n=13",
-    "description": "Чай Maryam Gold Вечерний. Успокаивающий, для релакса.",
+    "description": "Чай Maryam Gold Вечерний.",
     "benefits": "🍵 Спокойствие | 🌙 Сон | 😋 Вкус"
   },
   {
-    "id": 201,
+    "id": 211,
     "name": "Marianne Gold Молочный улгун",
     "category": "grocery",
     "price": 260,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=0c875b69c4f53a8f16c949c09fa58d6f8dc3c319-4843806-images-thumbs&n=13",
-    "description": "Чай Marianne Gold Молочный. Мягкий, сливочный.",
+    "description": "Чай Marianne Gold Молочный.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 202,
+    "id": 212,
     "name": "Gold Закат Кении",
     "category": "grocery",
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=dc309d362f31bb50ccd00005b6081b0c71b007c7-4908127-images-thumbs&n=13",
-    "description": "Чай Закат Кении. Насыщенный, с тропическими нотками.",
+    "description": "Чай Закат Кении.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 🌍 Кения"
   },
   {
-    "id": 203,
+    "id": 213,
     "name": "Пикой Пуро Кейлан Ти",
     "category": "grocery",
     "price": 350,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=d3c9c08c7fdc0b8aba23dcac691e988ad9b5c5a7-12484816-images-thumbs&n=13",
-    "description": "Элитный чай Пикой Пуро. Высший сорт, изысканный вкус.",
+    "description": "Элитный чай Пикой Пуро.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 204,
+    "id": 214,
     "name": "Орда Кения",
     "category": "grocery",
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=25e99611c5ebe5e3fe9484ae03cba0e11626633a-10929043-images-thumbs&n=13",
-    "description": "Чай Орда Кения. Классический кенийский чёрный чай.",
+    "description": "Чай Орда Кения.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 🌍 Кения"
   },
   {
-    "id": 205,
+    "id": 215,
     "name": "Акам",
     "category": "grocery",
     "price": 300,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=445d0a633458b25f2dce97321cdb4b86d0325477-9106703-images-thumbs&n=13",
-    "description": "Чай Акам. Ароматный, с богатым вкусом.",
+    "description": "Чай Акам. Ароматный.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 206,
+    "id": 216,
     "name": "Асам",
     "category": "grocery",
     "price": 300,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=445d0a633458b25f2dce97321cdb4b86d0325477-9106703-images-thumbs&n=13",
-    "description": "Чай Асам. Крепкий, насыщенный, индийский.",
+    "description": "Чай Асам. Индийский.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 207,
+    "id": 217,
     "name": "Чай «Пиала»",
     "category": "grocery",
     "price": 300,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=6714f9a1fbe19151d6cd27e2e6d98a672f4ed8a1-5906397-images-thumbs&n=13",
-    "description": "Чай Пиала. Качественный чёрный чай для ежедневного чаепития.",
+    "description": "Чай Пиала. Качественный чёрный.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 208,
+    "id": 218,
     "name": "Мария Премиум",
     "category": "grocery",
     "price": 260,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=ef42a252c83d3f5be6882e9bda8a462716e77a3d-17844163-images-thumbs&n=13",
-    "description": "Чай Мария Премиум. Высший сорт, отборный лист.",
+    "description": "Чай Мария Премиум.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 209,
+    "id": 219,
     "name": "Медиа",
     "category": "grocery",
     "price": 280,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=6714f9a1fbe19151d6cd27e2e6d98a672f4ed8a1-5906397-images-thumbs&n=13",
-    "description": "Чай Медиа. Качественный, классический.",
+    "description": "Чай Медиа. Классический.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
-    "id": 210,
+    "id": 220,
     "name": "Шампиньон (чай зелёный)",
     "category": "grocery",
     "price": 270,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=3e57cb791634d9171466ecc8394ac02a836aa5f2-12627675-images-thumbs&n=13",
-    "description": "Зелёный чай Шампиньон. Освежающий, полезный.",
+    "description": "Зелёный чай Шампиньон.",
     "benefits": "🍵 Антиоксиданты | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 211,
+    "id": 221,
     "name": "Чай зелёный Мэри",
     "category": "grocery",
     "price": 360,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=97e52189df7cb25d5b23278741deb3b38c100c54b3c371e5-12985844-images-thumbs&n=13",
-    "description": "Чай зелёный Мэри. Изысканный вкус, элитный сорт.",
+    "description": "Чай зелёный Мэри. Элитный.",
     "benefits": "🍵 Антиоксиданты | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 212,
+    "id": 222,
     "name": "Орда (чай чёрный)",
     "category": "grocery",
     "price": 350,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=25e99611c5ebe5e3fe9484ae03cba0e11626633a-10929043-images-thumbs&n=13",
-    "description": "Чёрный чай Орда. Крепкий, насыщенный.",
+    "description": "Чёрный чай Орда.",
     "benefits": "🍵 Бодрость | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 213,
+    "id": 223,
     "name": "Пиала (100 пакетиков)",
     "category": "grocery",
     "price": 330,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=6714f9a1fbe19151d6cd27e2e6d98a672f4ed8a1-5906397-images-thumbs&n=13",
-    "description": "Чай Пиала в пакетиках. 100 штук, удобно и быстро.",
+    "description": "Чай Пиала в пакетиках. 100 шт.",
     "benefits": "🍵 Удобство | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 214,
+    "id": 224,
     "name": "Чай крупнолистовой кенийский",
     "category": "grocery",
     "price": 350,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=25e99611c5ebe5e3fe9484ae03cba0e11626633a-10929043-images-thumbs&n=13",
-    "description": "Кенийский крупнолистовой чай. Богатый вкус, крупный лист.",
+    "description": "Кенийский крупнолистовой чай.",
     "benefits": "🍵 Бодрость | ☀️ Энергия | 😋 Вкус"
   },
   {
-    "id": 215,
-    "name": "Султан чай Лимон",
-    "category": "grocery",
-    "price": 100,
-    "unit": "упак",
-    "image": "https://avatars.mds.yandex.net/i?id=791d5ebf66fe24b7d97e3a1bea356b83325d1a51-5232827-images-thumbs&n=13",
-    "description": "Чай Султан с лимоном. Освежающий, цитрусовый.",
-    "benefits": "🍵 Вкус | ☀️ Энергия | 🍋 Лимон"
-  },
-  {
-    "id": 216,
+    "id": 225,
     "name": "Султан лимон с имбирём 180 г",
     "category": "grocery",
     "price": 350,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/get-mpic/18674845/2a0000019aeb0188416df33baba22f3a5f6a/orig",
-    "description": "Чай с имбирём и лимоном. Согревающий и полезный.",
+    "description": "Чай с имбирём и лимоном.",
     "benefits": "🍵 Иммунитет | 🍋 Лимон | ☀️ Энергия"
   },
   {
-    "id": 217,
+    "id": 226,
     "name": "Зулол имбирь-лимон 180 г",
     "category": "grocery",
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/get-mpic/5387588/img_id357313167907907705.jpeg/orig",
-    "description": "Ароматный чай с имбирём и лимоном.",
+    "description": "Чай с имбирём и лимоном.",
     "benefits": "🍵 Иммунитет | 🍋 Лимон | ☀️ Энергия"
   },
   {
-    "id": 218,
+    "id": 227,
     "name": "Зулол фруктовый микс 180 г",
     "category": "grocery",
     "price": 250,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=f7cfb91226ebb007a5c784c6a711c2b46b0bd2aa-5070492-images-thumbs&n=13",
-    "description": "Фруктовый чай с миксом ягод и фруктов.",
+    "description": "Фруктовый чай с миксом ягод.",
     "benefits": "🍵 Витамины | 😋 Вкус | ☀️ Энергия"
   },
   {
-    "id": 219,
+    "id": 228,
     "name": "Чёрный молотый перец 35 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=5dba82a78fc68cc80bca5e163bf0af869239f0b2-5669789-images-thumbs&n=13",
-    "description": "Натуральный чёрный молотый перец. 35 г.",
+    "description": "Чёрный молотый перец. 35 г.",
     "benefits": "🌶️ Специя | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 220,
+    "id": 229,
     "name": "Красный молотый перец 40 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=c68dbba157fb2f4d620b5951e7b92f86bd51f53f-4837630-images-thumbs&n=13",
-    "description": "Острый красный молотый перец. 40 г.",
+    "description": "Красный молотый перец. 40 г.",
     "benefits": "🌶️ Острота | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 221,
+    "id": 230,
     "name": "Приправа для плова 35 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=48c6ec5448aab4ed5eda27c5c98136c114d2d57e-9028838-images-thumbs&n=13",
-    "description": "Ароматная приправа для плова. 35 г.",
+    "description": "Ароматная приправа для плова.",
     "benefits": "🍚 Плов | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 222,
+    "id": 231,
     "name": "Приправа для мяса 35 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=aaff139222c2c8da0707712c5e34238b2a3a8d86-10576312-images-thumbs&n=13",
-    "description": "Универсальная приправа для мяса. 35 г.",
+    "description": "Универсальная приправа для мяса.",
     "benefits": "🥩 Мясо | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 223,
+    "id": 232,
     "name": "Гвоздика 40 г",
     "category": "grocery",
     "price": 100,
@@ -2130,37 +2240,37 @@
     "benefits": "🌿 Специя | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 224,
+    "id": 233,
     "name": "Барбарис 35 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=9c32d771ec83ab379edecf5c8428e13846cae60e-9231751-images-thumbs&n=13",
-    "description": "Сушёный барбарис для плова и блюд. 35 г.",
+    "description": "Сушёный барбарис для плова.",
     "benefits": "🍒 Плов | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 225,
+    "id": 234,
     "name": "Зира 40 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=dd0722f0f7d4690907316f28149c8066b28ca9e3-5129671-images-thumbs&n=13",
-    "description": "Ароматная зира. Незаменима для плова. 40 г.",
+    "description": "Ароматная зира. 40 г.",
     "benefits": "🍚 Плов | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 226,
+    "id": 235,
     "name": "Молотая паприка 40 г",
     "category": "grocery",
     "price": 100,
     "unit": "упак",
     "image": "https://avatars.mds.yandex.net/i?id=ddd51695741138605f03ce86790a6be78d1a5443-5232642-images-thumbs&n=13",
-    "description": "Сладкая молотая паприка. 40 г.",
+    "description": "Сладкая молотая паприка.",
     "benefits": "🌶️ Специя | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 227,
+    "id": 236,
     "name": "Кунжут белый 30 г",
     "category": "grocery",
     "price": 100,
@@ -2170,7 +2280,7 @@
     "benefits": "🫘 Кунжут | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 228,
+    "id": 237,
     "name": "Кунжут чёрный 30 г",
     "category": "grocery",
     "price": 100,
@@ -2180,253 +2290,233 @@
     "benefits": "🫘 Кунжут | 👨‍🍳 Готовка | 😋 Вкус"
   },
   {
-    "id": 229,
-    "name": "Калбаса Кызылжар говяжья полукопченая 750-850 г",
-    "category": "grocery",
-    "price": 400,
-    "unit": "шт",
-    "image": "https://avatars.mds.yandex.net/i?id=95ce66340894ace2183a61f0f9d17f25bdf6b847-5235303-images-thumbs&n=13",
-    "description": "Полукопченая говяжья колбаса Кызылжар.",
-    "benefits": "🥩 Мясо | 🍽️ Закуска | 😋 Вкус"
-  },
-  {
-    "id": 230,
-    "name": "Покиза Навруз варёная 1 кг",
-    "category": "grocery",
-    "price": 450,
-    "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/i?id=aa8eb145f35a2081a9a94e68ec9f282dc3881420-4497405-images-thumbs&n=13",
-    "description": "Варёная колбаса Покиза Навруз.",
-    "benefits": "🥩 Мясо | 🍽️ Закуска | 😋 Вкус"
-  },
-  {
-    "id": 231,
+    "id": 238,
     "name": "FLavis гранатовый",
     "category": "drinks",
     "price": 150,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=970114254e7eaa2949b6aaf8341482a5a5cb016e-10099509-images-thumbs&n=13",
-    "description": "FLavis со вкусом граната. Освежающий напиток.",
+    "description": "FLavis со вкусом граната.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Гранат"
   },
   {
-    "id": 233,
+    "id": 239,
     "name": "R/C Кола 1,5 л",
     "category": "drinks",
     "price": 200,
     "unit": "1,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=2b1a650df6c579b677a26386e2ccfe10e95df475-5339293-images-thumbs&n=13",
-    "description": "R/C Кола. Большая бутылка 1,5 литра.",
+    "description": "R/C Кола. Бутылка 1,5 л.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 234,
+    "id": 240,
     "name": "R/C Яблоко 1,5 л",
     "category": "drinks",
     "price": 200,
     "unit": "1,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=a4facb2a370a262f745138dd2ae46fa632827f07-4560215-images-thumbs&n=13",
-    "description": "R/C со вкусом яблока. Большая бутылка 1,5 литра.",
+    "description": "R/C со вкусом яблока. 1,5 л.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Вкус"
   },
   {
-    "id": 235,
+    "id": 241,
     "name": "R/C Апельсин 1,5 л",
     "category": "drinks",
     "price": 200,
     "unit": "1,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=b2ee15d84ef1a73b63bf878350bce8e2961dc3ec-4824873-images-thumbs&n=13",
-    "description": "R/C со вкусом апельсина. Большая бутылка 1,5 литра.",
+    "description": "R/C со вкусом апельсина. 1,5 л.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍊 Вкус"
   },
   {
-    "id": 236,
+    "id": 242,
     "name": "R/C Кола 1 л",
     "category": "drinks",
     "price": 150,
     "unit": "1 л",
     "image": "https://avatars.mds.yandex.net/i?id=2b1a650df6c579b677a26386e2ccfe10e95df475-5339293-images-thumbs&n=13",
-    "description": "R/C Кола 1 литр. Удобный формат.",
+    "description": "R/C Кола. 1 литр.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 237,
+    "id": 243,
     "name": "R/C Яблоко 1 л",
     "category": "drinks",
     "price": 150,
     "unit": "1 л",
     "image": "https://avatars.mds.yandex.net/i?id=a4facb2a370a262f745138dd2ae46fa632827f07-4560215-images-thumbs&n=13",
-    "description": "R/C со вкусом яблока 1 литр. Освежает.",
+    "description": "R/C со вкусом яблока. 1 л.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Вкус"
   },
   {
-    "id": 238,
+    "id": 244,
     "name": "R/C Апельсин 1 л",
     "category": "drinks",
     "price": 150,
     "unit": "1 л",
     "image": "https://avatars.mds.yandex.net/i?id=b2ee15d84ef1a73b63bf878350bce8e2961dc3ec-4824873-images-thumbs&n=13",
-    "description": "R/C со вкусом апельсина 1 литр. Солнечный вкус.",
+    "description": "R/C со вкусом апельсина. 1 л.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍊 Вкус"
   },
   {
-    "id": 239,
+    "id": 245,
     "name": "Спринг Яблоко",
     "category": "drinks",
     "price": 140,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=8e344ed5776b15718cc89d67840f043ea8f6b630-5220483-images-thumbs&n=13",
-    "description": "Спринг со вкусом яблока. Лёгкая газировка.",
+    "description": "Спринг со вкусом яблока.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Вкус"
   },
   {
-    "id": 240,
+    "id": 246,
     "name": "Спринг Мульти фрукт",
     "category": "drinks",
     "price": 140,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=f123f2c7df198c47c211fdcf04d001c399fb5d81-5354769-images-thumbs&n=13",
-    "description": "Спринг мультифрукт. Микс фруктовых вкусов.",
+    "description": "Спринг мультифрукт.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎🍊🍇 Вкус"
   },
   {
-    "id": 241,
+    "id": 247,
     "name": "Спринг Вишня",
     "category": "drinks",
     "price": 140,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=c680dfd1ce412b211426c105c2ba0d81e5ff6f7f-10350400-images-thumbs&n=13",
-    "description": "Спринг со вкусом вишни. Ягодная свежесть.",
+    "description": "Спринг со вкусом вишни.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍒 Вкус"
   },
   {
-    "id": 242,
+    "id": 248,
     "name": "Карачинский 0,5 л",
     "category": "drinks",
     "price": 45,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=b2d5bc968057c149ae4151057b2da2b30b07d9ef-5233155-images-thumbs&n=13",
-    "description": "Минеральная вода Карачинский. Лечебно-столовая.",
+    "description": "Минеральная вода Карачинский.",
     "benefits": "💧 Минералы | 🧹 Детокс | 💪 Здоровье"
   },
   {
-    "id": 243,
+    "id": 249,
     "name": "Сибирский бор 0,5 л",
     "category": "drinks",
     "price": 35,
     "unit": "0,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=3328772fe14159451c26bec4f3de7f1dd8f8dfd6-5355267-images-thumbs&n=13",
-    "description": "Минеральная вода Сибирский бор. Чистая, свежая.",
+    "description": "Минеральная вода Сибирский бор.",
     "benefits": "💧 Минералы | 🧹 Детокс | 💪 Здоровье"
   },
   {
-    "id": 244,
+    "id": 250,
     "name": "Сибирский бор 1,5 л",
     "category": "drinks",
     "price": 75,
     "unit": "1,5 л",
     "image": "https://avatars.mds.yandex.net/i?id=39e13dec8e11eb20756031ff72b04f73390dcc52-12753003-images-thumbs&n=13",
-    "description": "Минеральная вода Сибирский бор 1,5 литра. Для всей семьи.",
+    "description": "Минеральная вода Сибирский бор.",
     "benefits": "💧 Минералы | 🧹 Детокс | 💪 Здоровье"
   },
   {
-    "id": 245,
+    "id": 251,
     "name": "Кока-Кола",
     "category": "drinks",
     "price": 100,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=7624f39b70b0f43c1325cb46c7270e8955c23aa4-5577672-images-thumbs&n=13",
-    "description": "Классическая Кока-Кола. Всемирно известный вкус.",
+    "description": "Классическая Кока-Кола.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 246,
+    "id": 252,
     "name": "Миринда",
     "category": "drinks",
     "price": 100,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=40d7e0b23b2523c0237a0f249f0d11ece768cece-9065885-images-thumbs&n=13",
-    "description": "Цитрусовая Миранда. Яркий апельсиновый вкус.",
+    "description": "Цитрусовая Миранда.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 247,
+    "id": 253,
     "name": "RC",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=8683ea5b3458fe60b6eec00e7dae6bc0de503183-5651721-images-thumbs&n=13",
-    "description": "RC Cola. Классическая кола в банке.",
+    "description": "RC Cola. Классическая кола.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 248,
+    "id": 254,
     "name": "RC Яблоко (газировка)",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=875ccb64dcf050370250b41535544792304bfe3d-12651879-images-thumbs&n=13",
-    "description": "Газировка со вкусом яблока. Освежающая.",
+    "description": "Газировка со вкусом яблока.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎 Вкус"
   },
   {
-    "id": 249,
+    "id": 255,
     "name": "Маршмелло",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=861fd0af0eaf5ab1c95edf0f9d8cf1ebb8cbca8d-10917150-images-thumbs&n=13",
-    "description": "Газировка Маршмелло. Сладкий, необычный вкус.",
+    "description": "Газировка Маршмелло.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 250,
+    "id": 256,
     "name": "Мульти фрукт",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://ir-5.ozone.ru/s3/multimedia-1-h/wc1000/7628617925.jpg",
-    "description": "Мультифруктовый напиток. Микс вкусов.",
+    "description": "Мультифруктовый напиток.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🍎🍊🍇 Вкус"
   },
   {
-    "id": 251,
+    "id": 257,
     "name": "Манго",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/get-mpic/17732613/2a0000019af02f5edcd80d05b5b293a3d4d7/optimize",
-    "description": "Газировка со вкусом манго. Тропический вкус.",
+    "description": "Газировка со вкусом манго.",
     "benefits": "🥤 Освежение | ☀️ Жара | 🥭 Вкус"
   },
   {
-    "id": 256,
+    "id": 258,
     "name": "Миранда (330 мл)",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=b5bebb5023e463f48f7a2e3d21161ccd2d33344d-4936815-images-thumbs&n=13",
-    "description": "Миранда маленькая банка. Цитрусовый вкус.",
+    "description": "Миранда маленькая банка.",
     "benefits": "🥤 Освежение | ☀️ Жара | 😋 Вкус"
   },
   {
-    "id": 257,
+    "id": 259,
     "name": "Фанта банка",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://ir.ozone.ru/s3/multimedia-1-x/7470343905.jpg",
-    "description": "Классическая газировка Фанта в банке.",
+    "description": "Фанта в банке.",
     "benefits": "🥤 Освежение | 🍊 Вкус | 😋 Наслаждение"
   },
   {
-    "id": 258,
+    "id": 260,
     "name": "Пепси банка",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://ir.ozone.ru/s3/multimedia-1-7/8979152731.jpg",
-    "description": "Пепси в банке. Освежающий вкус.",
+    "description": "Пепси в банке.",
     "benefits": "🥤 Освежение | 😋 Вкус | ☀️ Жара"
   },
   {
@@ -2436,7 +2526,7 @@
     "price": 90,
     "unit": "банка",
     "image": "https://ir.ozone.ru/s3/multimedia-1-r/8288923635.jpg",
-    "description": "Гранатовый напиток Флавес в удобной банке.",
+    "description": "Гранатовый напиток Флавес.",
     "benefits": "🥤 Освежение | 🍎 Гранат | 😋 Вкус"
   },
   {
@@ -2446,7 +2536,7 @@
     "price": 90,
     "unit": "банка",
     "image": "https://ir-3.ozone.ru/s3/multimedia-1-t/wc500/7995403721.jpg",
-    "description": "Освежающий напиток со вкусом лайма.",
+    "description": "Напиток со вкусом лайма.",
     "benefits": "🥤 Освежение | 🍋 Лайм | 😋 Вкус"
   },
   {
@@ -2456,32 +2546,32 @@
     "price": 90,
     "unit": "банка",
     "image": "https://ir-3.ozone.ru/s3/multimedia-1-u/wc500/8044919058.jpg",
-    "description": "Напиток со вкусом лайма и клубники.",
+    "description": "Напиток лайм-клубника.",
     "benefits": "🥤 Освежение | 🍓 Клубника | 🍋 Лайм"
   },
   {
     "id": 264,
-    "name": "Мохито Клубника-лайм банка",
+    "name": "Мохито Клубника-лайм",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://image.kazanexpress.ru/csb8b8q5n2i9fjih1m80/original.jpg",
-    "description": "Освежающий напиток Мохито с клубникой и лаймом.",
+    "description": "Мохито с клубникой и лаймом.",
     "benefits": "🥤 Освежение | 🍓 Клубника | 🍋 Лайм"
   },
   {
     "id": 265,
-    "name": "Мохито Лайм-манго банка",
+    "name": "Мохито Лайм-манго",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://images.uzum.uz/cqf2d87frr885gh34b60/original.jpg",
-    "description": "Мохито с лаймом и манго. Тропический вкус.",
+    "description": "Мохито с лаймом и манго.",
     "benefits": "🥤 Освежение | 🥭 Манго | 🍋 Лайм"
   },
   {
     "id": 266,
-    "name": "Мохито Гранат-лайм банка",
+    "name": "Мохито Гранат-лайм",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
@@ -2491,12 +2581,12 @@
   },
   {
     "id": 267,
-    "name": "Мохито Голубика банка",
+    "name": "Мохито Голубика",
     "category": "drinks",
     "price": 90,
     "unit": "банка",
     "image": "https://basket-25.wbbasket.ru/vol4451/part445117/445117648/images/big/1.webp",
-    "description": "Мохито с голубикой. Ягодная свежесть.",
+    "description": "Мохито с голубикой.",
     "benefits": "🥤 Освежение | 🫐 Голубика | 😋 Вкус"
   },
   {
@@ -2506,7 +2596,7 @@
     "price": 120,
     "unit": "банка",
     "image": "https://cdn.metro-cc.ru/ru/ru_pim_326370001001_01.png?maxwidth=460&maxheight=460&format=jpg&quality=90&width=460&height=460",
-    "description": "Напиток Вкус Тархун с ароматом груши.",
+    "description": "Напиток Вкус Тархун с грушей.",
     "benefits": "🥤 Освежение | 🍐 Груша | 😋 Вкус"
   },
   {
@@ -2516,7 +2606,7 @@
     "price": 120,
     "unit": "банка",
     "image": "https://cdn.metro-cc.ru/ru/ru_pim_326373001001_01.png?maxwidth=460&maxheight=460&format=jpg&quality=90&width=460&height=460",
-    "description": "Напиток Вкус Тархун с ароматом фейхоа.",
+    "description": "Напиток Вкус Тархун с фейхоа.",
     "benefits": "🥤 Освежение | 🍈 Фейхоа | 😋 Вкус"
   },
   {
@@ -2526,7 +2616,7 @@
     "price": 120,
     "unit": "банка",
     "image": "https://cdn.metro-cc.ru/ru/ru_pim_326371001001_01.png?maxwidth=460&maxheight=460&format=jpg&quality=90&width=460&height=460",
-    "description": "Напиток Вкус Тархун с виноградом Саперави.",
+    "description": "Напиток Вкус Тархун Саперави.",
     "benefits": "🥤 Освежение | 🍇 Виноград | 😋 Вкус"
   },
   {
@@ -2536,7 +2626,7 @@
     "price": 120,
     "unit": "банка",
     "image": "https://cdn.metro-cc.ru/ru/ru_pim_326374001001_01.png?maxwidth=460&maxheight=460&format=jpg&quality=90&width=460&height=460",
-    "description": "Напиток Вкус Тархун с лимоном и лаймом.",
+    "description": "Напиток Вкус Тархун лимон-лайм.",
     "benefits": "🥤 Освежение | 🍋 Цитрус | 😋 Вкус"
   },
   {
@@ -2556,7 +2646,7 @@
     "price": 200,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=c6790c5e7c70dae647e5919f256a6cee1fb200f4-4034258-images-thumbs&n=13",
-    "description": "Домашний компот из вишни в банке 2 литра.",
+    "description": "Домашний компот из вишни. 2 л.",
     "benefits": "🍒 Вишня | 💧 Питьевой | 😋 Вкус"
   },
   {
@@ -2576,7 +2666,7 @@
     "price": 200,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=6c80578d544d0c5ede672bd0e553b4952f08ad2f-12471273-images-thumbs&n=13",
-    "description": "Гранатовый сок Green. Натуральный и освежающий.",
+    "description": "Гранатовый сок Green.",
     "benefits": "🍎 Гранат | 💪 Здоровье | 😋 Вкус"
   },
   {
@@ -2586,7 +2676,7 @@
     "price": 150,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=6bbc581c13127aa0d4614c7c353e4b2f7cd20fa3-4576585-images-thumbs&n=13",
-    "description": "Гранатовый сок из Азербайджана. 100% натуральный.",
+    "description": "Гранатовый сок из Азербайджана.",
     "benefits": "🍎 Гранат | 💪 Здоровье | 😋 Вкус"
   },
   {
@@ -2606,7 +2696,7 @@
     "price": 100,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=e8115f2213327cffcef185f901d1d9d88b23c679-11386386-images-thumbs&n=13",
-    "description": "Премиальный гранатовый сок GoldLiader, 0.5 л.",
+    "description": "Премиальный гранатовый сок. 0.5 л.",
     "benefits": "🍎 Гранат | 👑 Премиум | 😋 Вкус"
   },
   {
@@ -2616,7 +2706,7 @@
     "price": 150,
     "unit": "банка",
     "image": "https://images-foodtech.magnit.ru/L1jEh8rxd_UY4ER6jmgKDTGJWqPirjuQJ-v59953rfU/rs:fit:1600:1600/plain/s3:/img-dostavka/catalog/uf/702/7026909c23572c352cff39b65ccc883a/8c1af1128021ed826848867f102734e4.jpeg@webp",
-    "description": "Энергетический напиток Берн. Заряд бодрости.",
+    "description": "Энергетический напиток Берн.",
     "benefits": "⚡ Энергия | 🧠 Концентрация | 🔥 Бодрость"
   },
   {
@@ -2626,7 +2716,7 @@
     "price": 100,
     "unit": "банка",
     "image": "https://napitki.ru/filestorage/mark2/m2_item_files/3d010a8d6cbb1955c9437542d119f3b2.png",
-    "description": "Энергетик Монтаин. Взрывной вкус.",
+    "description": "Энергетик Монтаин.",
     "benefits": "⚡ Энергия | 🧠 Концентрация | 🔥 Бодрость"
   },
   {
@@ -2636,27 +2726,177 @@
     "price": 80,
     "unit": "банка",
     "image": "https://static.tildacdn.com/stor3332-3763-4663-b435-343562633461/48886026.jpg",
-    "description": "Маленькая банка энергетика Монтаин.",
+    "description": "Маленькая банка Монтаин.",
     "benefits": "⚡ Энергия | 🧠 Концентрация | 🎒 Компактно"
   },
   {
     "id": 282,
-    "name": "Манго в белой шоколадной глазури со вкусом дыни",
-    "category": "sweets",
-    "price": 70,
-    "unit": "100 г",
-    "image": "https://avatars.mds.yandex.net/get-images-cbir/2223941/8s0WznBCkPfu5nZRkfRaiw2654/orig",
-    "description": "Манго в белой шоколадной глазури со вкусом дыни",
-    "benefits": "🥰 Вкус | 🍫 Шоколад | 😋 Наслаждение"
+    "name": "Pepsi стеклянная бутылка",
+    "category": "drinks",
+    "price": 100,
+    "unit": "бут",
+    "image": "https://avatars.mds.yandex.net/i?id=97b44d823aed5e954b0a80d8fe35fd717f4634b6-4978136-images-thumbs&n=13",
+    "description": "Pepsi в стеклянной бутылке.",
+    "benefits": "🥤 Освежение | 😋 Вкус | ☀️ Жара"
   },
   {
     "id": 283,
-    "name": "Клубника в белой шоколадной глазури фруктовый микс",
+    "name": "Cola стеклянная бутылка",
+    "category": "drinks",
+    "price": 100,
+    "unit": "бут",
+    "image": "https://avatars.mds.yandex.net/i?id=42115a87c5b7240713409907ad218b8fad4adeca-12422461-images-thumbs&n=13",
+    "description": "Cola в стеклянной бутылке.",
+    "benefits": "🥤 Освежение | 😋 Вкус | ☀️ Жара"
+  },
+  {
+    "id": 284,
+    "name": "Fanta стеклянная бутылка",
+    "category": "drinks",
+    "price": 100,
+    "unit": "бут",
+    "image": "https://avatars.mds.yandex.net/i?id=b543f2e8a50ec43aa2e2667656666f688e44fab0-6997554-images-thumbs&n=13",
+    "description": "Fanta в стеклянной бутылке.",
+    "benefits": "🥤 Освежение | 🍊 Вкус | ☀️ Жара"
+  },
+  {
+    "id": 285,
+    "name": "Флавис с грушей 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=b0929c08b09c82ac62e7868d359300a784c91058-2459861-images-thumbs&n=13",
+    "description": "Напиток Флавис с грушей.",
+    "benefits": "🥤 Освежение | 🍐 Груша | 😋 Вкус"
+  },
+  {
+    "id": 286,
+    "name": "Флавис с ежевикой 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=cf8f84739396e9857fb0337e815d24c4c70448a6-5865537-images-thumbs&n=13",
+    "description": "Напиток Флавис с ежевикой.",
+    "benefits": "🥤 Освежение | 🫐 Ежевика | 😋 Вкус"
+  },
+  {
+    "id": 287,
+    "name": "Флавис с голубикой 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=ac45f43f1c51d488187040e4ef4575ebbb42100e-4547038-images-thumbs&n=13",
+    "description": "Напиток Флавис с голубикой.",
+    "benefits": "🥤 Освежение | 🫐 Голубика | 😋 Вкус"
+  },
+  {
+    "id": 288,
+    "name": "Флавис с лаймом 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=f79ac395deea97abfae43246831dbc77ceccd157-5367858-images-thumbs&n=13",
+    "description": "Напиток Флавис с лаймом.",
+    "benefits": "🥤 Освежение | 🍋 Лайм | 😋 Вкус"
+  },
+  {
+    "id": 289,
+    "name": "Флавис с клубникой и лаймом 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=31f7b3cd60221f4d25a41cbefbddbc91bedf50e5-4498485-images-thumbs&n=13",
+    "description": "Напиток Флавис клубника-лайм.",
+    "benefits": "🥤 Освежение | 🍓 Клубника | 🍋 Лайм"
+  },
+  {
+    "id": 290,
+    "name": "Флавис с гранатом 1.5 л",
+    "category": "drinks",
+    "price": 150,
+    "unit": "1.5 л",
+    "image": "https://avatars.mds.yandex.net/i?id=bf1379e22789a54133b34ad70485ea644a34bc2f-10242421-images-thumbs&n=13",
+    "description": "Напиток Флавис с гранатом.",
+    "benefits": "🥤 Освежение | 🍎 Гранат | 😋 Вкус"
+  },
+  {
+    "id": 291,
+    "name": "Латяо белый креветка",
     "category": "sweets",
-    "price": 70,
+    "price": 40,
+    "unit": "шт",
+    "image": "https://avatars.mds.yandex.net/i?id=9d487e9e072cd0f86965c5cfb165f82919d326fa-5500260-images-thumbs&n=13",
+    "description": "Латяо с белой креветкой.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 292,
+    "name": "Латяо жёлтый креветка",
+    "category": "sweets",
+    "price": 40,
+    "unit": "шт",
+    "image": "https://avatars.mds.yandex.net/i?id=71f4d1ee5162dbb7463e1c586eeed25d542c61fa-5276461-images-thumbs&n=13",
+    "description": "Латяо с жёлтой креветкой.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 293,
+    "name": "Латяо синий краб",
+    "category": "sweets",
+    "price": 40,
+    "unit": "шт",
+    "image": "https://avatars.mds.yandex.net/i?id=6d9ae7c0b2c96082e30c5029dad2d42aba8e09fb-4872026-images-thumbs&n=13",
+    "description": "Латяо с синим крабом.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 294,
+    "name": "Латяо чёрный 100 г",
+    "category": "sweets",
+    "price": 100,
     "unit": "100 г",
-    "image": "https://cdn.rf-sp.ru/31/fb/31fb5f4cb104e558be61877721e6bbcc.jpg",
-    "description": "Клубника в белой шоколадной глазури фруктовый микс",
-    "benefits": "🍬 Вкус | 🍫 Шоколад | 😋 Наслаждение"
+    "image": "https://avatars.mds.yandex.net/i?id=aba5f764995322df23273c5b9b690c9208549242-5875681-images-thumbs&n=13",
+    "description": "Латяо в чёрной упаковке. 100 г.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 295,
+    "name": "Латяо красный 100 г",
+    "category": "sweets",
+    "price": 100,
+    "unit": "100 г",
+    "image": "https://avatars.mds.yandex.net/i?id=3a1f630b18b776b86e475e1d4b8b0faefb628e1a-3768062-images-thumbs&n=13",
+    "description": "Латяо в красной упаковке. 100 г.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 296,
+    "name": "Латяо жёлтый 100 г",
+    "category": "sweets",
+    "price": 100,
+    "unit": "100 г",
+    "image": "https://avatars.mds.yandex.net/i?id=fe49e8c20a1aa0d1eeb7127e4bae10698857f582-5284061-images-thumbs&n=13",
+    "description": "Латяо в жёлтой упаковке. 100 г.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 297,
+    "name": "Латяо зелёный 100 г",
+    "category": "sweets",
+    "price": 100,
+    "unit": "100 г",
+    "image": "https://avatars.mds.yandex.net/i?id=4a8a6d6d090657fc81fee67cebd002d8f05d8a32-4374574-images-thumbs&n=13",
+    "description": "Латяо в зелёной упаковке. 100 г.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
+  },
+  {
+    "id": 298,
+    "name": "Латяо оранжевый 100 г",
+    "category": "sweets",
+    "price": 100,
+    "unit": "100 г",
+    "image": "https://avatars.mds.yandex.net/i?id=8a35901e458a19ee0e8f1b6a8e72c92d1f2c4892-5163423-images-thumbs&n=13",
+    "description": "Латяо в оранжевой упаковке. 100 г.",
+    "benefits": "🍜 Закуска | 😋 Вкус | 🌶️ Острота"
   }
 ]
