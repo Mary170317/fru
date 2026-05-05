@@ -470,10 +470,20 @@
     "benefits": "🌶️ Острота | 🔥 Метаболизм | 😋 Вкус"
   },
   {
+    "id": 52,
+    "name": "Томатная паста иранская 800 г",
+    "category": "canned",
+    "price": 200,
+    "unit": "банка",
+    "image": "https://basket-26.wbbasket.ru/vol4804/part480415/480415234/images/big/1.webp",
+    "description": "Иранская томатная паста. 800 г.",
+    "benefits": "🍅 Соусы | 👨‍🍳 Готовка | 😋 Вкус"
+  },
+  {
     "id": 53,
     "name": "Томатная паста иранская 400 г",
     "category": "canned",
-    "price": 340,
+    "price": 140,
     "unit": "банка",
     "image": "https://basket-26.wbbasket.ru/vol4804/part480415/480415234/images/big/1.webp",
     "description": "Иранская томатная паста. 400 г.",
@@ -523,7 +533,7 @@
     "id": 58,
     "name": "Ассорти Айдинос 1 л",
     "category": "canned",
-    "price": 450,
+    "price": 150,
     "unit": "банка",
     "image": "https://avatars.mds.yandex.net/i?id=ed8aa620f844025563b507b1c83978d8_l-5248587-images-thumbs&n=13",
     "description": "Ассорти из огурцов и помидоров в рассоле.",
@@ -538,6 +548,16 @@
     "image": "https://content2.flowwow-images.com/data/flowers/524x524/59/1681709311_96701459.jpg",
     "description": "Хрустящие узбекские огурцы в пряном рассоле.",
     "benefits": "🥒 Хруст | 🍽️ Закуска | 😋 Вкус"
+  },
+  {
+    "id": 60,
+    "name": "Ассорти Аиша 2 л",
+    "category": "canned",
+    "price": 250,
+    "unit": "банка",
+    "image": "https://avatars.mds.yandex.net/i?id=8f2de38175a8c4b045922e7eb7957b1e72917dec-10023671-images-thumbs&n=13",
+    "description": "Большая банка ассорти из огурцов и помидоров с чесноком.",
+    "benefits": "🥒 Огурцы | 🍅 Помидоры | 🍽️ Закуска"
   },
   {
     "id": 61,
