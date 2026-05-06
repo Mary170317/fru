@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 2,
     "name": "Яблоки Голден",
@@ -355,7 +355,7 @@
     "category": "vegetables",
     "price": 350,
     "unit": "кг",
-    "image": "https://avatars.mds.yandex.net/get-eda/3595156/7885b9db8e813723edba1523bf4e7dfb/1200x1200nocrop",
+    "image": "https://avatars.mds.yandex.net/i?id=6ead1158c9e6160585d97d502659836a202742c8-17419839-images-thumbs&n=13",
     "description": "Спелые сочные томаты.",
     "benefits": "🍅 Вкус | ❤️ Сердце | ✨ Кожа"
   },
@@ -1493,7 +1493,7 @@
     "id": 156,
     "name": "SWEET с арахисом",
     "category": "sweets",
-    "price": 65,
+    "price": 45,
     "unit": "100 г",
     "image": "https://avatars.mds.yandex.net/i?id=1604ea89e4abf450680682eebe173920449ccd27-5220612-images-thumbs&n=13",
     "description": "Конфеты SWEET с арахисом.",
@@ -2078,16 +2078,6 @@
     "image": "https://avatars.mds.yandex.net/i?id=25e99611c5ebe5e3fe9484ae03cba0e11626633a-10929043-images-thumbs&n=13",
     "description": "Чай Орда Кения.",
     "benefits": "🍵 Вкус | ☀️ Энергия | 🌍 Кения"
-  },
-  {
-    "id": 215,
-    "name": "Акам",
-    "category": "grocery",
-    "price": 300,
-    "unit": "упак",
-    "image": "https://avatars.mds.yandex.net/i?id=445d0a633458b25f2dce97321cdb4b86d0325477-9106703-images-thumbs&n=13",
-    "description": "Чай Акам. Ароматный.",
-    "benefits": "🍵 Вкус | ☀️ Энергия | 😋 Наслаждение"
   },
   {
     "id": 216,
