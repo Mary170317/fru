@@ -211,7 +211,7 @@ export default function Home() {
       <div className="bg-white/80 border-b">
         <div className="px-3 md:px-4 py-2 flex flex-wrap items-center gap-2 max-w-6xl mx-auto">
           <span className="text-xs md:text-sm text-gray-600 bg-orange-50/80 px-2 py-1.5 rounded-lg"><MapPin className="w-4 h-4 text-[#e87722] inline" /> ул. Облачная, 51</span>
-          <span className="text-xs md:text-sm text-gray-600 bg-orange-50/80 px-2 py-1.5 rounded-lg"><Phone className="w-4 h-4 text-[#e87722] inline" /> +7 913 004 1112</span>
+          <span className="text-xs md:text-sm text-gray-600 bg-orange-50/80 px-2 py-1.5 rounded-lg"><Phone className="w-4 h-4 text-[#e87722] inline" /> +79134781012</span>
           <button onClick={() => setIsMapVisible(true)} className="text-xs bg-green-50/80 text-[#4a7c59] px-3 py-1.5 rounded-lg font-medium"><MapPin className="w-4 h-4 inline" /> Наш магазин</button>
           <a href="https://t.me/fruktiovoshiOblachnaya51" target="_blank" className="text-xs bg-blue-50/80 text-[#1565c0] px-3 py-1.5 rounded-lg font-medium"><ExternalLink className="w-4 h-4 inline" /> Telegram</a>
         </div>
